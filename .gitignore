@@ -1,0 +1,6 @@
+./scenario_api/config/database.yml
+./scenario_api/Gemfile.lock
+./scenario_api/log/*.log
+./scenario_api/.idea/*
+.DS_Store
+./scenario_api/.DS_Store
