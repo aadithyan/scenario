@@ -32,6 +32,7 @@ Lemme introduce you some of the characters who plays different roles of the movi
 | Horror | Urgent |
 | Soothing | Normal |
 | Drama | Medium |
+| Packup | Project Finished |
 
 Yay! You met the crews of our movies. Now lets start the preproduction
 
