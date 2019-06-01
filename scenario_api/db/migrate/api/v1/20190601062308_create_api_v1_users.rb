@@ -5,6 +5,7 @@ class CreateApiV1Users < ActiveRecord::Migration[6.0]
       t.string :middle_name, limit: 50
       t.string :last_name, null: false, limit: 50
       t.string :email, null: false, limit: 100
+      t.string :password, null: false
       t.string :personal_email, null: false, limit: 100
       t.string :gender, default: 'Male'
       t.integer :organization_id, null: false
