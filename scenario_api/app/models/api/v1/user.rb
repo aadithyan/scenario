@@ -3,6 +3,7 @@
 # User
 class Api::V1::User < ApplicationRecord
   has_secure_password
+  has_secure_token :authentication_token
 
   validates :email, presence: true, uniqueness: true
   validates :first_name, presence: true, on: :create
@@ -11,4 +12,5 @@ class Api::V1::User < ApplicationRecord
   validates :password,
             length: { minimum: 6 },
             if: -> { new_record? || !password.nil? }
+
 end
