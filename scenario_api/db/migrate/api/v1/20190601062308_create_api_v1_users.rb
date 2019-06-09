@@ -7,11 +7,11 @@ class CreateApiV1Users < ActiveRecord::Migration[6.0]
       t.string :first_name, null: false, limit: 50
       t.string :middle_name, limit: 50
       t.string :last_name, null: false, limit: 50
+      t.string :user_name, null: false, limit: 100
       t.string :email, null: false, limit: 100
       t.string :password, null: false
-      t.string :personal_email, null: false, limit: 100
+      t.string :work_email, limit: 100
       t.string :gender, default: 'Male'
-      t.integer :organization_id, null: false
       t.boolean :active, default: true
       t.text :about_me
       t.date :dob
@@ -25,7 +25,7 @@ class CreateApiV1Users < ActiveRecord::Migration[6.0]
       t.string :profile_image_file_name
       t.string :employee_id
       t.string :nationality
-      t.string :maritial_status
+      t.string :marital_status
       t.timestamps
     end
   end
