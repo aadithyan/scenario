@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         resources :users do
           post :create, on: :collection
           post :login, on: :collection
+          put :update, on: :collection
         end
       end
     end
