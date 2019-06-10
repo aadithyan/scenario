@@ -37,6 +37,25 @@ module Api
           end
           return_value
         end
+
+        def update_user(user_params, user_id)
+          return_value = { status: ERROR_STATUS }
+          if user_id.blank? || user_params.blank?
+            return_value[:message] = I18n.t('api.v1.failed_messages.parameter_missing')
+            return_value
+          end
+
+          user = Api::V1::User.by_user_id(user_id)
+          if user.present?
+            if user.update(user_params)
+              return_value[:status] = SUCCESS_STATUS
+              return_value[:user] = user
+            end
+          else
+            return_value[:message] = I18n.t('api.v1.failed_messages.not_found')
+          end
+          return_value
+        end
       end
     end
   end
