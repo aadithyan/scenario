@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Create Address Proofs
 class CreateApiV1AddressProofs < ActiveRecord::Migration[6.0]
   def change
     create_table :address_proofs do |t|
