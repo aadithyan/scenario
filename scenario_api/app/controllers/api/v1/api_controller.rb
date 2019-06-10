@@ -2,6 +2,7 @@
 
 # Api Controller - Super Class
 class Api::V1::ApiController < ActionController::API
+  respond_to :json
 
   def not_found
     render json: { error: 'not_found' }
@@ -19,5 +20,4 @@ class Api::V1::ApiController < ActionController::API
       render json: { errors: e.message }, status: :unauthorized
     end
   end
-
 end

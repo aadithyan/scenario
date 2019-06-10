@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Create Experience table
 class CreateApiV1Experiences < ActiveRecord::Migration[6.0]
   def change
     create_table :experiences do |t|

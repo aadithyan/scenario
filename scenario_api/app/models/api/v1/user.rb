@@ -11,4 +11,18 @@ class Api::V1::User < ApplicationRecord
   validates :password,
             length: { minimum: 6 },
             if: -> { new_record? || !password.nil? }
+
+  scope :by_email, ->(email) { find_by(email: email) }
+
+  class << self
+    def generate_token(user_id)
+      create_token(user_id)
+    end
+
+    private
+
+    def create_token(user_id)
+      Api::V1::JsonWebToken.encode(user_id: user_id)
+    end
+  end
 end
