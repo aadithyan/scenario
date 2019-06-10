@@ -30,10 +30,10 @@ module Api
               return_value[:status] = SUCCESS_STATUS
               return_value[:user] = user
             else
-              return_value[:message] = 'User Not Fount'
+              return_value[:message] = I18n.t('api.v1.failed_messages.login_failed')
             end
           else
-            return_value[:message] = 'User Not Fount'
+            return_value[:message] = I18n.t('api.v1.failed_messages.login_failed')
           end
           return_value
         end
