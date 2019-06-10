@@ -12,7 +12,7 @@ class Api::V1::User < ApplicationRecord
             length: { minimum: 6 },
             if: -> { new_record? || !password.nil? }
 
-  scope :by_email, ->(email) { find_by(email: email) }
+  scope :by_email, ->(email) { find_by(email: email, active: true) }
 
   class << self
     def generate_token(user_id)
