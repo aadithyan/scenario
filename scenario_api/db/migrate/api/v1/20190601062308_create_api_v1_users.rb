@@ -22,7 +22,6 @@ class CreateApiV1Users < ActiveRecord::Migration[6.0]
       t.string :contact_no
       t.string :emergency_contact_no
       t.string :profile_image_file_name
-      t.string :employee_id
       t.string :nationality
       t.string :marital_status
       t.timestamps
