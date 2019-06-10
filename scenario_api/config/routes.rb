@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       constraints format: :json do
         resources :users do
           post :create, on: :collection
+          post :login, on: :collection
         end
       end
     end

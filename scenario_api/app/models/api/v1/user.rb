@@ -3,7 +3,6 @@
 # User
 class Api::V1::User < ApplicationRecord
   has_secure_password
-  has_secure_token :authentication_token
 
   validates :email, presence: true, uniqueness: true
   validates :first_name, presence: true, on: :create
@@ -13,4 +12,17 @@ class Api::V1::User < ApplicationRecord
             length: { minimum: 6 },
             if: -> { new_record? || !password.nil? }
 
+  scope :by_email, ->(email) { find_by(email: email) }
+
+  class << self
+    def generate_token(user_id)
+      create_token(user_id)
+    end
+
+    private
+
+    def create_token(user_id)
+      Api::V1::JsonWebToken.encode(user_id: user_id)
+    end
+  end
 end
