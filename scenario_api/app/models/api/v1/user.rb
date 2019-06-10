@@ -10,7 +10,6 @@ class Api::V1::User < ApplicationRecord
   has_many :languages
   has_many :experiences
 
-
   validates :email, presence: true, uniqueness: true
   validates :first_name, presence: true, on: :create
   validates :last_name, presence: true, on: :create
