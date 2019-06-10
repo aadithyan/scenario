@@ -4,6 +4,13 @@
 class Api::V1::User < ApplicationRecord
   has_secure_password
 
+  has_many :skills
+  has_many :address_proofs
+  has_many :qualifications
+  has_many :languages
+  has_many :experiences
+
+
   validates :email, presence: true, uniqueness: true
   validates :first_name, presence: true, on: :create
   validates :last_name, presence: true, on: :create
