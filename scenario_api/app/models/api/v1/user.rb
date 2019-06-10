@@ -4,11 +4,11 @@
 class Api::V1::User < ApplicationRecord
   has_secure_password
 
-  has_many :skills
-  has_many :address_proofs
-  has_many :qualifications
-  has_many :languages
-  has_many :experiences
+  has_many :skills, dependent: :destroy
+  has_many :address_proofs, dependent: :destroy
+  has_many :qualifications, dependent: :destroy
+  has_many :languages, dependent: :destroy
+  has_many :experiences, dependent: :destroy
 
   validates :email, presence: true, uniqueness: true
   validates :first_name, presence: true, on: :create
