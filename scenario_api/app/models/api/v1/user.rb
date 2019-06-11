@@ -20,6 +20,7 @@ class Api::V1::User < ApplicationRecord
 
   scope :by_email, ->(email) { find_by(email: email, active: true) }
   scope :by_user_id, ->(user_id) { find_by(id: user_id, active: true) }
+  scope :by_active, -> { where(active: true) }
 
   class << self
     def generate_token(user_id)
