@@ -4,6 +4,10 @@
 class Api::V1::UsersController < Api::V1::ApiController
   before_action :authorize_request, except: [:create, :login]
 
+  def index
+    render json: users, status: :ok
+  end
+
   def create
     return_value = Api::V1::UserService.create_user(user_params)
     if return_value[:status] == SUCCESS_STATUS
@@ -44,6 +48,11 @@ class Api::V1::UsersController < Api::V1::ApiController
 
   def user(user_info)
     Api::V1::UserSerializer.new(user_info).serialized_json
+  end
+
+  def users
+    users_list = Api::V1::UserService.list_all_users
+    Api::V1::UserSerializer.new(users_list).serialized_json
   end
 
   def user_params
