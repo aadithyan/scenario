@@ -145,7 +145,7 @@ describe 'Users' do
   end
 
   path '/api/v1/users/{id}' do
-    put 'Update user data' do
+    put 'Update user details' do
       tags 'Users'
       consumes 'application/json'
       produces 'application/json'
@@ -184,7 +184,7 @@ describe 'Users' do
                     }
                   }
                 }
-      response 201, 'User created Response' do
+      response 200, 'Updated user details response' do
         schema type: :object,
                properties: {
                  data: {
@@ -223,6 +223,49 @@ describe 'Users' do
         run_test!
       end
       response 409, 'Failed to update user' do
+        schema type: :object,
+               properties: {
+                 status: { type: :string },
+                 message: { type: :string }
+               }
+        run_test!
+      end
+    end
+  end
+
+  path '/api/v1/users/change_password' do
+    post 'Change User Password' do
+      tags 'Users'
+      consumes 'application/json'
+      produces 'application/json'
+      parameter in: :header, type: :string, name: 'content-type',
+                required: true, description: 'Content Type'
+      parameter in: :header, type: :string, name: 'Authorization',
+                required: true, description: 'Bearer <token>'
+      parameter in: :query, type: :string, name: 'id',
+                required: true, description: 'User Id'
+      parameter name: :params, in: :body, required: true, schema: {
+        type: :object,
+        properties: {
+          user: {
+            type: :object,
+            properties: {
+              current_password: { type: :string },
+              new_password: { type: :string },
+              password_confirmation: { type: :string }
+            }
+          }
+        }
+      }
+      response 200, 'Successfully changed password response' do
+        schema type: :object,
+               properties: {
+                 status: { type: :string },
+                 message: { type: :string }
+               }
+        run_test!
+      end
+      response 409, 'Failed to change password' do
         schema type: :object,
                properties: {
                  status: { type: :string },

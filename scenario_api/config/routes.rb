@@ -9,6 +9,7 @@ Rails.application.routes.draw do
           post :create, on: :collection
           post :login, on: :collection
           put :update, on: :collection
+          post :change_password, on: :collection
         end
       end
     end
