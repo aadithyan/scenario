@@ -88,6 +88,22 @@ module Api
         def list_all_users
           Api::V1::User.by_active
         end
+
+        def find_user(user_id)
+          return_value = { status: ERROR_STATUS }
+          if user_id.blank?
+            return_value[:message] = I18n.t('api.v1.failed_messages.parameter_missing')
+            return return_value
+          end
+          user = Api::V1::User.by_user_id(user_id)
+          if user.present?
+            return_value[:status] = SUCCESS_STATUS
+            return_value[:user] = user
+          else
+            return_value[:message] = I18n.t('api.v1.failed_messages.not_found')
+          end
+          return_value
+        end
       end
     end
   end

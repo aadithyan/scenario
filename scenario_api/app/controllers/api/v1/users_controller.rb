@@ -8,6 +8,15 @@ class Api::V1::UsersController < Api::V1::ApiController
     render json: users, status: :ok
   end
 
+  def show
+    return_value = Api::V1::UserService.find_user(params[:id])
+    if return_value[:status] == SUCCESS_STATUS
+      render json: user(return_value[:user]), status: :created
+    else
+      render json: return_value, status: :conflict
+    end
+  end
+
   def create
     return_value = Api::V1::UserService.create_user(user_params)
     if return_value[:status] == SUCCESS_STATUS
