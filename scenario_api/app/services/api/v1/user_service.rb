@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Batches Api
+# User Service
 module Api
   module V1
     # User Service
