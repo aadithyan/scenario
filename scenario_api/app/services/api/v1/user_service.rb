@@ -84,6 +84,10 @@ module Api
           end
           return_value
         end
+
+        def list_all_users
+          Api::V1::User.by_active
+        end
       end
     end
   end
