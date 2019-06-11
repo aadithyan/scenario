@@ -31,6 +31,15 @@ class Api::V1::UsersController < Api::V1::ApiController
     end
   end
 
+  def change_password
+    return_value = Api::V1::UserService.change_password(user_params, params[:id])
+    if return_value[:status] == SUCCESS_STATUS
+      render json: return_value, status: :ok
+    else
+      render json: return_value, status: :conflict
+    end
+  end
+
   private
 
   def user(user_info)
@@ -41,6 +50,7 @@ class Api::V1::UsersController < Api::V1::ApiController
     params.require(:user).permit(:email, :first_name, :last_name, :middle_name, :user_name, :password,
                                  :work_email, :gender, :about_me, :dob, :address,
                                  :city, :state, :zip_postal_code, :country, :contact_no,
-                                 :emergency_contact_no, :nationality, :marital_status)
+                                 :emergency_contact_no, :nationality, :marital_status,
+                                 :current_password, :new_password, :password_confirmation)
   end
 end

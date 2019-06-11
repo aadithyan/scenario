@@ -38,11 +38,39 @@ module Api
           return_value
         end
 
+        def change_password(user_params, user_id)
+          return_value = { status: ERROR_STATUS }
+          if user_id.blank? || user_params.blank?
+            return_value[:message] = I18n.t('api.v1.failed_messages.parameter_missing')
+            return return_value
+          end
+          user = Api::V1::User.by_user_id(user_id)
+          if user.present?
+            unless user.authenticate(user_params[:current_password])
+              return_value[:message] = I18n.t('api.v1.failed_messages.current_password_incorrect')
+              return return_value
+            end
+            if user_params[:new_password] != user_params[:password_confirmation]
+              return_value[:message] = I18n.t('api.v1.failed_messages.new_password_mismatch')
+              return return_value
+            end
+            if user.update(password: user_params[:new_password])
+              return_value[:status] = SUCCESS_STATUS
+              return_value[:message] = I18n.t('api.v1.success_messages.change_password')
+            else
+              return_value[:message] = I18n.t('api.v1.failed_messages.change_password')
+            end
+          else
+            return_value[:message] = I18n.t('api.v1.failed_messages.not_found')
+          end
+          return_value
+        end
+
         def update_user(user_params, user_id)
           return_value = { status: ERROR_STATUS }
           if user_id.blank? || user_params.blank?
             return_value[:message] = I18n.t('api.v1.failed_messages.parameter_missing')
-            return_value
+            return return_value
           end
 
           user = Api::V1::User.by_user_id(user_id)

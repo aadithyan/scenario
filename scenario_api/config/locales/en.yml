@@ -38,3 +38,8 @@ en:
         parameter_missing: 'Some required information is missing or incomplete.'
         not_found: "Sorry, we couldn't find an account."
         not_authorized: 'You are not authorized to access the api'
+        current_password_incorrect: 'Current Password you provided is incorrect'
+        new_password_mismatch: 'New password and confirmation password do not match'
+        change_password: 'Failed to change password. Please try again.'
+      success_messages:
+        change_password: 'Successfully changed password'

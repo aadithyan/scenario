@@ -315,7 +315,7 @@
     },
     "/api/v1/users/{id}": {
       "put": {
-        "summary": "Update user data",
+        "summary": "Update user details",
         "tags": [
           "Users"
         ],
@@ -418,8 +418,8 @@
           }
         ],
         "responses": {
-          "201": {
-            "description": "User created Response",
+          "200": {
+            "description": "Updated user details response",
             "schema": {
               "type": "object",
               "properties": {
@@ -508,6 +508,97 @@
           },
           "409": {
             "description": "Failed to update user",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string"
+                },
+                "message": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users/change_password": {
+      "post": {
+        "summary": "Change User Password",
+        "tags": [
+          "Users"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "type": "string",
+            "name": "content-type",
+            "required": true,
+            "description": "Content Type"
+          },
+          {
+            "in": "header",
+            "type": "string",
+            "name": "Authorization",
+            "required": true,
+            "description": "Bearer <token>"
+          },
+          {
+            "in": "query",
+            "type": "string",
+            "name": "id",
+            "required": true,
+            "description": "User Id"
+          },
+          {
+            "name": "params",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "user": {
+                  "type": "object",
+                  "properties": {
+                    "current_password": {
+                      "type": "string"
+                    },
+                    "new_password": {
+                      "type": "string"
+                    },
+                    "password_confirmation": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully changed password response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string"
+                },
+                "message": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Failed to change password",
             "schema": {
               "type": "object",
               "properties": {
