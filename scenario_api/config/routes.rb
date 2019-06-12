@@ -11,6 +11,8 @@ Rails.application.routes.draw do
           put :update, on: :collection
           post :change_password, on: :collection
         end
+
+        resources :packages
       end
     end
   end
