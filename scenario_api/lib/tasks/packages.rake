@@ -20,7 +20,7 @@ namespace :api do
                          { name: 'Credentials', package_code: 'CMN-CRL005', description: 'Organize your passwords' }]
 
       work_packages.each do |wk_package|
-        category = Api::V1::PackageCategory.find_by(name: 'Work')
+        category = Api::V1::PackageCategories.find_by(name: 'Work')
         if category.present?
           wk_package[:package_categories_id] = category.id
           Api::V1::Package.create(wk_package)
@@ -28,7 +28,7 @@ namespace :api do
       end
 
       life_packages.each do |wk_package|
-        category = Api::V1::PackageCategory.find_by(name: 'Life')
+        category = Api::V1::PackageCategories.find_by(name: 'Life')
         if category.present?
           wk_package[:package_categories_id] = category.id
           Api::V1::Package.create(wk_package)
@@ -36,7 +36,7 @@ namespace :api do
       end
 
       common_packages.each do |wk_package|
-        category = Api::V1::PackageCategory.find_by(name: 'Common')
+        category = Api::V1::PackageCategories.find_by(name: 'Common')
         if category.present?
           wk_package[:package_categories_id] = category.id
           Api::V1::Package.create(wk_package)
