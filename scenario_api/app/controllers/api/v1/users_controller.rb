@@ -56,12 +56,17 @@ class Api::V1::UsersController < Api::V1::ApiController
   private
 
   def user(user_info)
-    Api::V1::UserSerializer.new(user_info).serialized_json
+    ActiveModelSerializers::SerializableResource
+      .new(user_info,
+           each_serializer: Api::V1::UserSerializer).as_json
   end
 
   def users
     users_list = Api::V1::UserService.list_all_users
     Api::V1::UserSerializer.new(users_list).serialized_json
+    ActiveModelSerializers::SerializableResource
+      .new(users_list,
+           each_serializer: Api::V1::UserSerializer).as_json
   end
 
   def user_params

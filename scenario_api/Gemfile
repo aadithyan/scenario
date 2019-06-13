@@ -23,7 +23,6 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'rest-client'
 gem 'active_model_serializers'
-gem 'fast_jsonapi'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'rswag'
 gem 'jwt'
