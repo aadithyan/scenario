@@ -37,6 +37,7 @@ en:
         login_failed: 'Sorry, the email and password you entered do not match. Please try again.'
         parameter_missing: 'Some required information is missing or incomplete.'
         not_found: "Sorry, we couldn't find an account."
+        record_not_found: "Sorry, we couldn't find the record."
         not_authorized: 'You are not authorized to access the api'
         current_password_incorrect: 'Current Password you provided is incorrect'
         new_password_mismatch: 'New password and confirmation password do not match'
