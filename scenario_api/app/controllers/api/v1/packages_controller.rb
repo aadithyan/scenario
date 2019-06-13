@@ -15,7 +15,19 @@ class Api::V1::PackagesController < ApplicationController
     end
   end
 
+  def categories
+    render json: list_categories, status: :ok
+  end
+
   private
+
+  def list_categories
+    package_categories = Api::V1::PackageCategoryService.list_package_categories
+    ActiveModelSerializers::SerializableResource
+      .new(package_categories,
+           each_serializer: Api::V1::PackageCategorySerializer,
+           include: :packages).as_json
+  end
 
   def package(package_detail)
     ActiveModelSerializers::SerializableResource
