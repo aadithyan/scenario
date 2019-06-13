@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Api::Engine => '/api-docs'
   namespace :api, constraints: { format: 'json' } do
@@ -12,7 +11,9 @@ Rails.application.routes.draw do
           post :change_password, on: :collection
         end
 
-        resources :packages
+        resources :packages do
+          get :categories, on: :collection
+        end
       end
     end
   end
