@@ -139,6 +139,145 @@
         }
       }
     },
+    "/api/v1/packages/{id}": {
+      "get": {
+        "summary": "List single package",
+        "tags": [
+          "Packages"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "type": "string",
+            "name": "content-type",
+            "required": true,
+            "description": "Content Type"
+          },
+          {
+            "in": "header",
+            "type": "string",
+            "name": "Authorization",
+            "required": true,
+            "description": "Bearer <token>"
+          },
+          {
+            "in": "path",
+            "type": "string",
+            "name": "id",
+            "required": true,
+            "description": "Package Id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Response for listing single package",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "integer"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "attributes": {
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "product_code": {
+                          "type": "string"
+                        },
+                        "package_categories_id": {
+                          "type": "integer"
+                        },
+                        "description": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "relationships": {
+                      "type": "object",
+                      "properties": {
+                        "package_categories": {
+                          "type": "object",
+                          "properties": {
+                            "data": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "integer"
+                                },
+                                "type": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "included": {
+                  "type": "array",
+                  "items": {
+                    "properties": {
+                      "id": {
+                        "type": "integer"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "attributes": {
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "description": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "relationships": {
+                        "properties": {
+                          "packages": {
+                            "properties": {
+                              "data": {
+                                "type": "array",
+                                "items": {
+                                  "properties": {
+                                    "id": {
+                                      "type": "integer"
+                                    },
+                                    "type": {
+                                      "type": "string"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/users": {
       "get": {
         "summary": "Lists all users",
