@@ -17,3 +17,4 @@ Api::V1::Level.find_or_create_by(name: 'Expert', active: true)
 Api::V1::PackageCategories.find_or_create_by(name: 'Work', description: 'Balance your job')
 Api::V1::PackageCategories.find_or_create_by(name: 'Life', description: 'Balance your life')
 Api::V1::PackageCategories.find_or_create_by(name: 'Common', description: 'Balance both your work and life')
+
