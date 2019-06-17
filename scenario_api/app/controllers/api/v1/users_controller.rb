@@ -63,7 +63,6 @@ class Api::V1::UsersController < Api::V1::ApiController
 
   def users
     users_list = Api::V1::UserService.list_all_users
-    Api::V1::UserSerializer.new(users_list).serialized_json
     ActiveModelSerializers::SerializableResource
       .new(users_list,
            each_serializer: Api::V1::UserSerializer).as_json
