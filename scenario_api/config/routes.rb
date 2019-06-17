@@ -14,6 +14,11 @@ Rails.application.routes.draw do
         resources :packages do
           get :categories, on: :collection
         end
+
+        resources :skills do
+          post :create, on: :collection
+        end
+
       end
     end
   end

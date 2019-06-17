@@ -2,6 +2,7 @@
 
 # User Skills
 class Api::V1::Skill < ApplicationRecord
-  belongs_to :user
-  belongs_to :level
+  scope :list_all, -> { all }
+
+  validates :name, uniqueness: true, presence: true
 end

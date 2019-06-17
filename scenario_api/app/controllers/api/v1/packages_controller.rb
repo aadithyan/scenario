@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 # Packages Controller
-class Api::V1::PackagesController < ApplicationController
+class Api::V1::PackagesController < Api::V1::ApiController
+  before_action :authorize_request
+
   def index
     render json: packages, status: :ok
   end

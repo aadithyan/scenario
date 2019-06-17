@@ -4,7 +4,6 @@
 class Api::V1::User < ApplicationRecord
   has_secure_password
 
-  has_many :skills, dependent: :destroy
   has_many :address_proofs, dependent: :destroy
   has_many :qualifications, dependent: :destroy
   has_many :languages, dependent: :destroy
