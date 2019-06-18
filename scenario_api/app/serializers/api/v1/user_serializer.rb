@@ -9,4 +9,5 @@ class Api::V1::UserSerializer < ActiveModel::Serializer
   attributes :city, :state, :zip_postal_code, :country, :contact_no
   attributes :emergency_contact_no, :nationality, :marital_status
   has_many :user_skills, serializer: Api::V1::UserSkillSerializer
+  has_many :languages, serializer: Api::V1::LanguageSerializer
 end
