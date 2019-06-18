@@ -69,6 +69,21 @@ describe 'Users' do
                              }
                            }
                          }
+                       },
+                       languages: {
+                         type: :array,
+                         items: {
+                           type: :object,
+                           properties: {
+                             id: { type: :integer },
+                             name: { type: :string },
+                             fluency: { type: :integer },
+                             fluency_name: { type: :string },
+                             competancy: { type: :integer },
+                             competancy_name: { type: :string },
+                             comments: { type: :string }
+                           }
+                         }
                        }
                      }
                    }
@@ -142,6 +157,21 @@ describe 'Users' do
                                name: { type: :string }
                              }
                            }
+                         }
+                       }
+                     },
+                     languages: {
+                       type: :array,
+                       items: {
+                         type: :object,
+                         properties: {
+                           id: { type: :integer },
+                           name: { type: :string },
+                           fluency: { type: :integer },
+                           fluency_name: { type: :string },
+                           competancy: { type: :integer },
+                           competancy_name: { type: :string },
+                           comments: { type: :string }
                          }
                        }
                      }
@@ -238,6 +268,21 @@ describe 'Users' do
                            }
                          }
                        }
+                     },
+                     languages: {
+                       type: :array,
+                       items: {
+                         type: :object,
+                         properties: {
+                           id: { type: :integer },
+                           name: { type: :string },
+                           fluency: { type: :integer },
+                           fluency_name: { type: :string },
+                           competancy: { type: :integer },
+                           competancy_name: { type: :string },
+                           comments: { type: :string }
+                         }
+                       }
                      }
                    }
                  }
@@ -326,6 +371,21 @@ describe 'Users' do
                                name: { type: :string }
                              }
                            }
+                         }
+                       }
+                     },
+                     languages: {
+                       type: :array,
+                       items: {
+                         type: :object,
+                         properties: {
+                           id: { type: :integer },
+                           name: { type: :string },
+                           fluency: { type: :integer },
+                           fluency_name: { type: :string },
+                           competancy: { type: :integer },
+                           competancy_name: { type: :string },
+                           comments: { type: :string }
                          }
                        }
                      }
@@ -439,6 +499,21 @@ describe 'Users' do
                            }
                          }
                        }
+                     },
+                     languages: {
+                       type: :array,
+                       items: {
+                         type: :object,
+                         properties: {
+                           id: { type: :integer },
+                           name: { type: :string },
+                           fluency: { type: :integer },
+                           fluency_name: { type: :string },
+                           competancy: { type: :integer },
+                           competancy_name: { type: :string },
+                           comments: { type: :string }
+                         }
+                       }
                      }
                    }
                  }
@@ -446,6 +521,236 @@ describe 'Users' do
         run_test!
       end
       response 409, 'Failed to update user' do
+        schema type: :object,
+               properties: {
+                 status: { type: :string },
+                 message: { type: :string }
+               }
+        run_test!
+      end
+    end
+  end
+
+  path '/api/v1/users/user_skills' do
+    post 'Create User Skills' do
+      tags 'Users'
+      consumes 'application/json'
+      produces 'application/json'
+      parameter in: :header, type: :string, name: 'content-type',
+                required: true, description: 'Content Type'
+      parameter in: :header, type: :string, name: 'Authorization',
+                required: true, description: 'Bearer <token>'
+      parameter in: :query, type: :string, name: :id,
+                required: true, description: 'User Id'
+      parameter name: :params, in: :body, required: true,
+                schema: {
+                  type: :object,
+                  properties: {
+                    user_skill: {
+                      type: :array,
+                      items: {
+                        type: :object,
+                        properties: {
+                          level_id: { type: :integer },
+                          skill_id: { type: :integer },
+                          years: { type: :integer },
+                          months: { type: :integer }
+                        }
+                      }
+                    }
+                  }
+                }
+      response 200, 'Response for skills created for user' do
+        schema type: :object,
+               properties: {
+                 data: {
+                   properties: {
+                     id: { type: :integer },
+                     first_name: { type: :string },
+                     middle_name: { type: :string },
+                     last_name: { type: :string },
+                     email: { type: :string },
+                     password: { type: :string },
+                     authentiation_token: { type: :string },
+                     user_name: { type: :string },
+                     work_email: { type: :string },
+                     gender: { type: :string },
+                     active: { type: :boolean },
+                     about_me: { type: :string },
+                     dob: { type: :date },
+                     address: { type: :string },
+                     city: { type: :string },
+                     state: { type: :string },
+                     zip_postal_code: { type: :string },
+                     country: { type: :string },
+                     contact_no: { type: :string },
+                     emergency_contact_no: { type: :string },
+                     nationality: { type: :string },
+                     marital_status: { type: :string },
+                     user_skills: {
+                       type: :array,
+                       items: {
+                         properties: {
+                           id: { type: :integer },
+                           years: { type: :integer },
+                           months: { type: :integer },
+                           skill: {
+                             type: :object,
+                             properties: {
+                               id: { type: :integer },
+                               name: { type: :string },
+                               keywords: {
+                                 type: :array,
+                                 items: { type: :string }
+                               }
+                             }
+                           },
+                           level: {
+                             type: :object,
+                             properties: {
+                               id: { type: :integer },
+                               name: { type: :string }
+                             }
+                           }
+                         }
+                       }
+                     },
+                     languages: {
+                       type: :array,
+                       items: {
+                         type: :object,
+                         properties: {
+                           id: { type: :integer },
+                           name: { type: :string },
+                           fluency: { type: :integer },
+                           fluency_name: { type: :string },
+                           competancy: { type: :integer },
+                           competancy_name: { type: :string },
+                           comments: { type: :string }
+                         }
+                       }
+                     }
+                   }
+                 }
+               }
+        run_test!
+      end
+      response 409, 'Failed to create skills for user' do
+        schema type: :object,
+               properties: {
+                 status: { type: :string },
+                 message: { type: :string }
+               }
+        run_test!
+      end
+    end
+  end
+
+  path '/api/v1/users/user_languages' do
+    post 'Create User Languages' do
+      tags 'Users'
+      consumes 'application/json'
+      produces 'application/json'
+      parameter in: :header, type: :string, name: 'content-type',
+                required: true, description: 'Content Type'
+      parameter in: :header, type: :string, name: 'Authorization',
+                required: true, description: 'Bearer <token>'
+      parameter in: :query, type: :string, name: :id,
+                required: true, description: 'User Id'
+      parameter name: :params, in: :body, required: true,
+                schema: {
+                  type: :object,
+                  properties: {
+                    languages: {
+                      type: :array,
+                      items: {
+                        type: :object,
+                        properties: {
+                          name: { type: :string },
+                          fluency: { type: :string },
+                          competancy: { type: :string },
+                          comments: { type: :comments }
+                        }
+                      }
+                    }
+                  }
+                }
+      response 200, 'Response for languages created for user' do
+        schema type: :object,
+               properties: {
+                 data: {
+                   properties: {
+                     id: { type: :integer },
+                     first_name: { type: :string },
+                     middle_name: { type: :string },
+                     last_name: { type: :string },
+                     email: { type: :string },
+                     password: { type: :string },
+                     authentiation_token: { type: :string },
+                     user_name: { type: :string },
+                     work_email: { type: :string },
+                     gender: { type: :string },
+                     active: { type: :boolean },
+                     about_me: { type: :string },
+                     dob: { type: :date },
+                     address: { type: :string },
+                     city: { type: :string },
+                     state: { type: :string },
+                     zip_postal_code: { type: :string },
+                     country: { type: :string },
+                     contact_no: { type: :string },
+                     emergency_contact_no: { type: :string },
+                     nationality: { type: :string },
+                     marital_status: { type: :string },
+                     user_skills: {
+                       type: :array,
+                       items: {
+                         properties: {
+                           id: { type: :integer },
+                           years: { type: :integer },
+                           months: { type: :integer },
+                           skill: {
+                             type: :object,
+                             properties: {
+                               id: { type: :integer },
+                               name: { type: :string },
+                               keywords: {
+                                 type: :array,
+                                 items: { type: :string }
+                               }
+                             }
+                           },
+                           level: {
+                             type: :object,
+                             properties: {
+                               id: { type: :integer },
+                               name: { type: :string }
+                             }
+                           }
+                         }
+                       }
+                     },
+                     languages: {
+                       type: :array,
+                       items: {
+                         type: :object,
+                         properties: {
+                           id: { type: :integer },
+                           name: { type: :string },
+                           fluency: { type: :integer },
+                           fluency_name: { type: :string },
+                           competancy: { type: :integer },
+                           competancy_name: { type: :string },
+                           comments: { type: :string }
+                         }
+                       }
+                     }
+                   }
+                 }
+               }
+        run_test!
+      end
+      response 409, 'Failed to create user languages' do
         schema type: :object,
                properties: {
                  status: { type: :string },
