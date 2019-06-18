@@ -2,7 +2,7 @@
 
 # Package Serializer
 class Api::V1::SkillSerializer < ActiveModel::Serializer
-  type :skill
+  type :data
   attributes :id, :name, :keywords
 
   def keywords

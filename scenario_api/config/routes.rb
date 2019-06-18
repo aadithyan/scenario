@@ -9,6 +9,7 @@ Rails.application.routes.draw do
           post :login, on: :collection
           put :update, on: :collection
           post :change_password, on: :collection
+          post :user_skills, on: :collection
         end
 
         resources :packages do
@@ -18,7 +19,6 @@ Rails.application.routes.draw do
         resources :skills do
           post :create, on: :collection
         end
-
       end
     end
   end

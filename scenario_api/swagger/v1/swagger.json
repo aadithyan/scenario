@@ -46,87 +46,29 @@
                       "id": {
                         "type": "integer"
                       },
-                      "type": {
+                      "name": {
                         "type": "string"
                       },
-                      "attributes": {
-                        "properties": {
-                          "name": {
-                            "type": "string"
-                          },
-                          "product_code": {
-                            "type": "string"
-                          },
-                          "package_categories_id": {
-                            "type": "integer"
-                          },
-                          "description": {
-                            "type": "string"
-                          }
-                        }
+                      "product_code": {
+                        "type": "string"
                       },
-                      "relationships": {
-                        "type": "object",
-                        "properties": {
-                          "package_categories": {
-                            "type": "object",
-                            "properties": {
-                              "data": {
-                                "type": "object",
-                                "properties": {
-                                  "id": {
-                                    "type": "integer"
-                                  },
-                                  "type": {
-                                    "type": "string"
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                },
-                "included": {
-                  "type": "array",
-                  "items": {
-                    "properties": {
-                      "id": {
+                      "package_categories_id": {
                         "type": "integer"
                       },
-                      "type": {
+                      "description": {
                         "type": "string"
                       },
-                      "attributes": {
+                      "package_categories": {
+                        "type": "object",
                         "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
                           "name": {
                             "type": "string"
                           },
                           "description": {
                             "type": "string"
-                          }
-                        }
-                      },
-                      "relationships": {
-                        "properties": {
-                          "packages": {
-                            "properties": {
-                              "data": {
-                                "type": "array",
-                                "items": {
-                                  "properties": {
-                                    "id": {
-                                      "type": "integer"
-                                    },
-                                    "type": {
-                                      "type": "string"
-                                    }
-                                  }
-                                }
-                              }
-                            }
                           }
                         }
                       }
@@ -180,86 +122,30 @@
                       "id": {
                         "type": "integer"
                       },
-                      "type": {
+                      "name": {
                         "type": "string"
                       },
-                      "attributes": {
-                        "properties": {
-                          "name": {
-                            "type": "string"
-                          },
-                          "product_code": {
-                            "type": "string"
-                          },
-                          "package_categories_id": {
-                            "type": "integer"
-                          },
-                          "description": {
-                            "type": "string"
-                          }
-                        }
-                      },
-                      "relationships": {
-                        "type": "object",
-                        "properties": {
-                          "packages": {
-                            "type": "object",
-                            "properties": {
-                              "data": {
-                                "type": "object",
-                                "properties": {
-                                  "id": {
-                                    "type": "integer"
-                                  },
-                                  "type": {
-                                    "type": "string"
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                },
-                "included": {
-                  "type": "array",
-                  "items": {
-                    "properties": {
-                      "id": {
-                        "type": "integer"
-                      },
-                      "type": {
+                      "description": {
                         "type": "string"
                       },
-                      "attributes": {
-                        "properties": {
-                          "name": {
-                            "type": "string"
-                          },
-                          "description": {
-                            "type": "string"
-                          }
-                        }
-                      },
-                      "relationships": {
-                        "properties": {
-                          "packages_categories": {
-                            "properties": {
-                              "data": {
-                                "type": "array",
-                                "items": {
-                                  "properties": {
-                                    "id": {
-                                      "type": "integer"
-                                    },
-                                    "type": {
-                                      "type": "string"
-                                    }
-                                  }
-                                }
-                              }
+                      "packages": {
+                        "type": "array",
+                        "items": {
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "product_code": {
+                              "type": "string"
+                            },
+                            "package_categories_id": {
+                              "type": "integer"
+                            },
+                            "description": {
+                              "type": "string"
                             }
                           }
                         }
@@ -320,87 +206,29 @@
                     "id": {
                       "type": "integer"
                     },
-                    "type": {
+                    "name": {
                       "type": "string"
                     },
-                    "attributes": {
+                    "product_code": {
+                      "type": "string"
+                    },
+                    "package_categories_id": {
+                      "type": "integer"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "package_categories": {
+                      "type": "object",
                       "properties": {
+                        "id": {
+                          "type": "integer"
+                        },
                         "name": {
                           "type": "string"
                         },
-                        "product_code": {
-                          "type": "string"
-                        },
-                        "package_categories_id": {
-                          "type": "integer"
-                        },
                         "description": {
                           "type": "string"
-                        }
-                      }
-                    },
-                    "relationships": {
-                      "type": "object",
-                      "properties": {
-                        "package_categories": {
-                          "type": "object",
-                          "properties": {
-                            "data": {
-                              "type": "object",
-                              "properties": {
-                                "id": {
-                                  "type": "integer"
-                                },
-                                "type": {
-                                  "type": "string"
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                },
-                "included": {
-                  "type": "array",
-                  "items": {
-                    "properties": {
-                      "id": {
-                        "type": "integer"
-                      },
-                      "type": {
-                        "type": "string"
-                      },
-                      "attributes": {
-                        "properties": {
-                          "name": {
-                            "type": "string"
-                          },
-                          "description": {
-                            "type": "string"
-                          }
-                        }
-                      },
-                      "relationships": {
-                        "properties": {
-                          "packages": {
-                            "properties": {
-                              "data": {
-                                "type": "array",
-                                "items": {
-                                  "properties": {
-                                    "id": {
-                                      "type": "integer"
-                                    },
-                                    "type": {
-                                      "type": "string"
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
                         }
                       }
                     }
@@ -453,20 +281,13 @@
                       "id": {
                         "type": "integer"
                       },
-                      "type": {
+                      "name": {
                         "type": "string"
                       },
-                      "attributes": {
-                        "properties": {
-                          "name": {
-                            "type": "string"
-                          },
-                          "keywords": {
-                            "type": "array",
-                            "items": {
-                              "type": "string"
-                            }
-                          }
+                      "keywords": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
                         }
                       }
                     }
@@ -519,76 +340,110 @@
                       "id": {
                         "type": "integer"
                       },
-                      "type": {
+                      "first_name": {
                         "type": "string"
                       },
-                      "attributes": {
-                        "properties": {
-                          "id": {
-                            "type": "integer"
-                          },
-                          "first_name": {
-                            "type": "string"
-                          },
-                          "middle_name": {
-                            "type": "string"
-                          },
-                          "last_name": {
-                            "type": "string"
-                          },
-                          "email": {
-                            "type": "string"
-                          },
-                          "password": {
-                            "type": "string"
-                          },
-                          "authentiation_token": {
-                            "type": "string"
-                          },
-                          "user_name": {
-                            "type": "string"
-                          },
-                          "work_email": {
-                            "type": "string"
-                          },
-                          "gender": {
-                            "type": "string"
-                          },
-                          "active": {
-                            "type": "boolean"
-                          },
-                          "about_me": {
-                            "type": "string"
-                          },
-                          "dob": {
-                            "type": "date"
-                          },
-                          "address": {
-                            "type": "string"
-                          },
-                          "city": {
-                            "type": "string"
-                          },
-                          "state": {
-                            "type": "string"
-                          },
-                          "zip_postal_code": {
-                            "type": "string"
-                          },
-                          "country": {
-                            "type": "string"
-                          },
-                          "contact_no": {
-                            "type": "string"
-                          },
-                          "emergency_contact_no": {
-                            "type": "string"
-                          },
-                          "nationality": {
-                            "type": "string"
-                          },
-                          "marital_status": {
-                            "type": "string"
+                      "middle_name": {
+                        "type": "string"
+                      },
+                      "last_name": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "password": {
+                        "type": "string"
+                      },
+                      "authentiation_token": {
+                        "type": "string"
+                      },
+                      "user_name": {
+                        "type": "string"
+                      },
+                      "work_email": {
+                        "type": "string"
+                      },
+                      "gender": {
+                        "type": "string"
+                      },
+                      "active": {
+                        "type": "boolean"
+                      },
+                      "about_me": {
+                        "type": "string"
+                      },
+                      "dob": {
+                        "type": "date"
+                      },
+                      "address": {
+                        "type": "string"
+                      },
+                      "city": {
+                        "type": "string"
+                      },
+                      "state": {
+                        "type": "string"
+                      },
+                      "zip_postal_code": {
+                        "type": "string"
+                      },
+                      "country": {
+                        "type": "string"
+                      },
+                      "contact_no": {
+                        "type": "string"
+                      },
+                      "emergency_contact_no": {
+                        "type": "string"
+                      },
+                      "nationality": {
+                        "type": "string"
+                      },
+                      "marital_status": {
+                        "type": "string"
+                      },
+                      "user_skills": {
+                        "type": "array",
+                        "items": {
+                          "properties": {
+                            "id": {
+                              "type": "integer"
+                            },
+                            "years": {
+                              "type": "integer"
+                            },
+                            "months": {
+                              "type": "integer"
+                            },
+                            "skill": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "integer"
+                                },
+                                "name": {
+                                  "type": "string"
+                                },
+                                "keywords": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              }
+                            },
+                            "level": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "integer"
+                                },
+                                "name": {
+                                  "type": "string"
+                                }
+                              }
+                            }
                           }
                         }
                       }
@@ -664,76 +519,110 @@
                     "id": {
                       "type": "integer"
                     },
-                    "type": {
+                    "first_name": {
                       "type": "string"
                     },
-                    "attributes": {
-                      "properties": {
-                        "id": {
-                          "type": "integer"
-                        },
-                        "first_name": {
-                          "type": "string"
-                        },
-                        "middle_name": {
-                          "type": "string"
-                        },
-                        "last_name": {
-                          "type": "string"
-                        },
-                        "email": {
-                          "type": "string"
-                        },
-                        "password": {
-                          "type": "string"
-                        },
-                        "authentiation_token": {
-                          "type": "string"
-                        },
-                        "user_name": {
-                          "type": "string"
-                        },
-                        "work_email": {
-                          "type": "string"
-                        },
-                        "gender": {
-                          "type": "string"
-                        },
-                        "active": {
-                          "type": "boolean"
-                        },
-                        "about_me": {
-                          "type": "string"
-                        },
-                        "dob": {
-                          "type": "date"
-                        },
-                        "address": {
-                          "type": "string"
-                        },
-                        "city": {
-                          "type": "string"
-                        },
-                        "state": {
-                          "type": "string"
-                        },
-                        "zip_postal_code": {
-                          "type": "string"
-                        },
-                        "country": {
-                          "type": "string"
-                        },
-                        "contact_no": {
-                          "type": "string"
-                        },
-                        "emergency_contact_no": {
-                          "type": "string"
-                        },
-                        "nationality": {
-                          "type": "string"
-                        },
-                        "marital_status": {
-                          "type": "string"
+                    "middle_name": {
+                      "type": "string"
+                    },
+                    "last_name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "password": {
+                      "type": "string"
+                    },
+                    "authentiation_token": {
+                      "type": "string"
+                    },
+                    "user_name": {
+                      "type": "string"
+                    },
+                    "work_email": {
+                      "type": "string"
+                    },
+                    "gender": {
+                      "type": "string"
+                    },
+                    "active": {
+                      "type": "boolean"
+                    },
+                    "about_me": {
+                      "type": "string"
+                    },
+                    "dob": {
+                      "type": "date"
+                    },
+                    "address": {
+                      "type": "string"
+                    },
+                    "city": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "zip_postal_code": {
+                      "type": "string"
+                    },
+                    "country": {
+                      "type": "string"
+                    },
+                    "contact_no": {
+                      "type": "string"
+                    },
+                    "emergency_contact_no": {
+                      "type": "string"
+                    },
+                    "nationality": {
+                      "type": "string"
+                    },
+                    "marital_status": {
+                      "type": "string"
+                    },
+                    "user_skills": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "years": {
+                            "type": "integer"
+                          },
+                          "months": {
+                            "type": "integer"
+                          },
+                          "skill": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "integer"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "keywords": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "level": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "integer"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            }
+                          }
                         }
                       }
                     }
@@ -805,76 +694,110 @@
                     "id": {
                       "type": "integer"
                     },
-                    "type": {
+                    "first_name": {
                       "type": "string"
                     },
-                    "attributes": {
-                      "properties": {
-                        "id": {
-                          "type": "integer"
-                        },
-                        "first_name": {
-                          "type": "string"
-                        },
-                        "middle_name": {
-                          "type": "string"
-                        },
-                        "last_name": {
-                          "type": "string"
-                        },
-                        "email": {
-                          "type": "string"
-                        },
-                        "password": {
-                          "type": "string"
-                        },
-                        "authentiation_token": {
-                          "type": "string"
-                        },
-                        "user_name": {
-                          "type": "string"
-                        },
-                        "work_email": {
-                          "type": "string"
-                        },
-                        "gender": {
-                          "type": "string"
-                        },
-                        "active": {
-                          "type": "boolean"
-                        },
-                        "about_me": {
-                          "type": "string"
-                        },
-                        "dob": {
-                          "type": "date"
-                        },
-                        "address": {
-                          "type": "string"
-                        },
-                        "city": {
-                          "type": "string"
-                        },
-                        "state": {
-                          "type": "string"
-                        },
-                        "zip_postal_code": {
-                          "type": "string"
-                        },
-                        "country": {
-                          "type": "string"
-                        },
-                        "contact_no": {
-                          "type": "string"
-                        },
-                        "emergency_contact_no": {
-                          "type": "string"
-                        },
-                        "nationality": {
-                          "type": "string"
-                        },
-                        "marital_status": {
-                          "type": "string"
+                    "middle_name": {
+                      "type": "string"
+                    },
+                    "last_name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "password": {
+                      "type": "string"
+                    },
+                    "authentiation_token": {
+                      "type": "string"
+                    },
+                    "user_name": {
+                      "type": "string"
+                    },
+                    "work_email": {
+                      "type": "string"
+                    },
+                    "gender": {
+                      "type": "string"
+                    },
+                    "active": {
+                      "type": "boolean"
+                    },
+                    "about_me": {
+                      "type": "string"
+                    },
+                    "dob": {
+                      "type": "date"
+                    },
+                    "address": {
+                      "type": "string"
+                    },
+                    "city": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "zip_postal_code": {
+                      "type": "string"
+                    },
+                    "country": {
+                      "type": "string"
+                    },
+                    "contact_no": {
+                      "type": "string"
+                    },
+                    "emergency_contact_no": {
+                      "type": "string"
+                    },
+                    "nationality": {
+                      "type": "string"
+                    },
+                    "marital_status": {
+                      "type": "string"
+                    },
+                    "user_skills": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "years": {
+                            "type": "integer"
+                          },
+                          "months": {
+                            "type": "integer"
+                          },
+                          "skill": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "integer"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "keywords": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "level": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "integer"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            }
+                          }
                         }
                       }
                     }
@@ -884,7 +807,7 @@
             }
           },
           "409": {
-            "description": "Failed to update user",
+            "description": "Failed to fetch user details",
             "schema": {
               "type": "object",
               "properties": {
@@ -1013,76 +936,110 @@
                     "id": {
                       "type": "integer"
                     },
-                    "type": {
+                    "first_name": {
                       "type": "string"
                     },
-                    "attributes": {
-                      "properties": {
-                        "id": {
-                          "type": "integer"
-                        },
-                        "first_name": {
-                          "type": "string"
-                        },
-                        "middle_name": {
-                          "type": "string"
-                        },
-                        "last_name": {
-                          "type": "string"
-                        },
-                        "email": {
-                          "type": "string"
-                        },
-                        "password": {
-                          "type": "string"
-                        },
-                        "authentiation_token": {
-                          "type": "string"
-                        },
-                        "user_name": {
-                          "type": "string"
-                        },
-                        "work_email": {
-                          "type": "string"
-                        },
-                        "gender": {
-                          "type": "string"
-                        },
-                        "active": {
-                          "type": "boolean"
-                        },
-                        "about_me": {
-                          "type": "string"
-                        },
-                        "dob": {
-                          "type": "date"
-                        },
-                        "address": {
-                          "type": "string"
-                        },
-                        "city": {
-                          "type": "string"
-                        },
-                        "state": {
-                          "type": "string"
-                        },
-                        "zip_postal_code": {
-                          "type": "string"
-                        },
-                        "country": {
-                          "type": "string"
-                        },
-                        "contact_no": {
-                          "type": "string"
-                        },
-                        "emergency_contact_no": {
-                          "type": "string"
-                        },
-                        "nationality": {
-                          "type": "string"
-                        },
-                        "marital_status": {
-                          "type": "string"
+                    "middle_name": {
+                      "type": "string"
+                    },
+                    "last_name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "password": {
+                      "type": "string"
+                    },
+                    "authentiation_token": {
+                      "type": "string"
+                    },
+                    "user_name": {
+                      "type": "string"
+                    },
+                    "work_email": {
+                      "type": "string"
+                    },
+                    "gender": {
+                      "type": "string"
+                    },
+                    "active": {
+                      "type": "boolean"
+                    },
+                    "about_me": {
+                      "type": "string"
+                    },
+                    "dob": {
+                      "type": "date"
+                    },
+                    "address": {
+                      "type": "string"
+                    },
+                    "city": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "zip_postal_code": {
+                      "type": "string"
+                    },
+                    "country": {
+                      "type": "string"
+                    },
+                    "contact_no": {
+                      "type": "string"
+                    },
+                    "emergency_contact_no": {
+                      "type": "string"
+                    },
+                    "nationality": {
+                      "type": "string"
+                    },
+                    "marital_status": {
+                      "type": "string"
+                    },
+                    "user_skills": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "years": {
+                            "type": "integer"
+                          },
+                          "months": {
+                            "type": "integer"
+                          },
+                          "skill": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "integer"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "keywords": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "level": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "integer"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            }
+                          }
                         }
                       }
                     }
@@ -1161,76 +1118,110 @@
                     "id": {
                       "type": "integer"
                     },
-                    "type": {
+                    "first_name": {
                       "type": "string"
                     },
-                    "attributes": {
-                      "properties": {
-                        "id": {
-                          "type": "integer"
-                        },
-                        "first_name": {
-                          "type": "string"
-                        },
-                        "middle_name": {
-                          "type": "string"
-                        },
-                        "last_name": {
-                          "type": "string"
-                        },
-                        "email": {
-                          "type": "string"
-                        },
-                        "password": {
-                          "type": "string"
-                        },
-                        "authentiation_token": {
-                          "type": "string"
-                        },
-                        "user_name": {
-                          "type": "string"
-                        },
-                        "work_email": {
-                          "type": "string"
-                        },
-                        "gender": {
-                          "type": "string"
-                        },
-                        "active": {
-                          "type": "boolean"
-                        },
-                        "about_me": {
-                          "type": "string"
-                        },
-                        "dob": {
-                          "type": "date"
-                        },
-                        "address": {
-                          "type": "string"
-                        },
-                        "city": {
-                          "type": "string"
-                        },
-                        "state": {
-                          "type": "string"
-                        },
-                        "zip_postal_code": {
-                          "type": "string"
-                        },
-                        "country": {
-                          "type": "string"
-                        },
-                        "contact_no": {
-                          "type": "string"
-                        },
-                        "emergency_contact_no": {
-                          "type": "string"
-                        },
-                        "nationality": {
-                          "type": "string"
-                        },
-                        "marital_status": {
-                          "type": "string"
+                    "middle_name": {
+                      "type": "string"
+                    },
+                    "last_name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "password": {
+                      "type": "string"
+                    },
+                    "authentiation_token": {
+                      "type": "string"
+                    },
+                    "user_name": {
+                      "type": "string"
+                    },
+                    "work_email": {
+                      "type": "string"
+                    },
+                    "gender": {
+                      "type": "string"
+                    },
+                    "active": {
+                      "type": "boolean"
+                    },
+                    "about_me": {
+                      "type": "string"
+                    },
+                    "dob": {
+                      "type": "date"
+                    },
+                    "address": {
+                      "type": "string"
+                    },
+                    "city": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "zip_postal_code": {
+                      "type": "string"
+                    },
+                    "country": {
+                      "type": "string"
+                    },
+                    "contact_no": {
+                      "type": "string"
+                    },
+                    "emergency_contact_no": {
+                      "type": "string"
+                    },
+                    "nationality": {
+                      "type": "string"
+                    },
+                    "marital_status": {
+                      "type": "string"
+                    },
+                    "user_skills": {
+                      "type": "array",
+                      "items": {
+                        "properties": {
+                          "id": {
+                            "type": "integer"
+                          },
+                          "years": {
+                            "type": "integer"
+                          },
+                          "months": {
+                            "type": "integer"
+                          },
+                          "skill": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "integer"
+                              },
+                              "name": {
+                                "type": "string"
+                              },
+                              "keywords": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              }
+                            }
+                          },
+                          "level": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "integer"
+                              },
+                              "name": {
+                                "type": "string"
+                              }
+                            }
+                          }
                         }
                       }
                     }
