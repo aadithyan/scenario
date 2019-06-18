@@ -23,6 +23,6 @@ class Api::V1::SkillsController < Api::V1::ApiController
   end
 
   def skill_params
-    params.permit(skill: [:name, :keywords])
+    params.permit(:id, skill: [:name, :keywords])
   end
 end

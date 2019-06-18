@@ -21,62 +21,16 @@ describe 'Packages' do
                    items: {
                      properties: {
                        id: { type: :integer },
-                       type: { type: :string },
-                       attributes: {
-                         properties: {
-                           name: { type: :string },
-                           product_code: { type: :string },
-                           package_categories_id: { type: :integer },
-                           description: { type: :string }
-                         }
-                       },
-                       relationships: {
+                       name: { type: :string },
+                       product_code: { type: :string },
+                       package_categories_id: { type: :integer },
+                       description: { type: :string },
+                       package_categories: {
                          type: :object,
                          properties: {
-                           package_categories: {
-                             type: :object,
-                             properties: {
-                               data: {
-                                 type: :object,
-                                 properties: {
-                                   id: { type: :integer },
-                                   type: { type: :string }
-                                 }
-                               }
-                             }
-                           }
-                         }
-                       }
-                     }
-                   }
-                 },
-                 included: {
-                   type: :array,
-                   items: {
-                     properties: {
-                       id: { type: :integer },
-                       type: { type: :string },
-                       attributes: {
-                         properties: {
+                           id: { type: :integer },
                            name: { type: :string },
                            description: { type: :string }
-                         }
-                       },
-                       relationships: {
-                         properties: {
-                           packages: {
-                             properties: {
-                               data: {
-                                 type: :array,
-                                 items: {
-                                   properties: {
-                                     id: { type: :integer },
-                                     type: { type: :string }
-                                   }
-                                 }
-                               }
-                             }
-                           }
                          }
                        }
                      }
@@ -105,61 +59,17 @@ describe 'Packages' do
                    items: {
                      properties: {
                        id: { type: :integer },
-                       type: { type: :string },
-                       attributes: {
-                         properties: {
-                           name: { type: :string },
-                           product_code: { type: :string },
-                           package_categories_id: { type: :integer },
-                           description: { type: :string }
-                         }
-                       },
-                       relationships: {
-                         type: :object,
-                         properties: {
-                           packages: {
-                             type: :object,
-                             properties: {
-                               data: {
-                                 type: :object,
-                                 properties: {
-                                   id: { type: :integer },
-                                   type: { type: :string }
-                                 }
-                               }
-                             }
-                           }
-                         }
-                       }
-                     }
-                   }
-                 },
-                 included: {
-                   type: :array,
-                   items: {
-                     properties: {
-                       id: { type: :integer },
-                       type: { type: :string },
-                       attributes: {
-                         properties: {
-                           name: { type: :string },
-                           description: { type: :string }
-                         }
-                       },
-                       relationships: {
-                         properties: {
-                           packages_categories: {
-                             properties: {
-                               data: {
-                                 type: :array,
-                                 items: {
-                                   properties: {
-                                     id: { type: :integer },
-                                     type: { type: :string }
-                                   }
-                                 }
-                               }
-                             }
+                       name: { type: :string },
+                       description: { type: :string },
+                       packages: {
+                         type: :array,
+                         items: {
+                           properties: {
+                             id: { type: :integer },
+                             name: { type: :string },
+                             product_code: { type: :string },
+                             package_categories_id: { type: :integer },
+                             description: { type: :string }
                            }
                          }
                        }
@@ -190,62 +100,16 @@ describe 'Packages' do
                    type: :object,
                    properties: {
                      id: { type: :integer },
-                     type: { type: :string },
-                     attributes: {
-                       properties: {
-                         name: { type: :string },
-                         product_code: { type: :string },
-                         package_categories_id: { type: :integer },
-                         description: { type: :string }
-                       }
-                     },
-                     relationships: {
+                     name: { type: :string },
+                     product_code: { type: :string },
+                     package_categories_id: { type: :integer },
+                     description: { type: :string },
+                     package_categories: {
                        type: :object,
                        properties: {
-                         package_categories: {
-                           type: :object,
-                           properties: {
-                             data: {
-                               type: :object,
-                               properties: {
-                                 id: { type: :integer },
-                                 type: { type: :string }
-                               }
-                             }
-                           }
-                         }
-                       }
-                     }
-                   }
-                 },
-                 included: {
-                   type: :array,
-                   items: {
-                     properties: {
-                       id: { type: :integer },
-                       type: { type: :string },
-                       attributes: {
-                         properties: {
-                           name: { type: :string },
-                           description: { type: :string }
-                         }
-                       },
-                       relationships: {
-                         properties: {
-                           packages: {
-                             properties: {
-                               data: {
-                                 type: :array,
-                                 items: {
-                                   properties: {
-                                     id: { type: :integer },
-                                     type: { type: :string }
-                                   }
-                                 }
-                               }
-                             }
-                           }
-                         }
+                         id: { type: :integer },
+                         name: { type: :string },
+                         description: { type: :string }
                        }
                      }
                    }
