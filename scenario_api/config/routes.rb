@@ -10,6 +10,7 @@ Rails.application.routes.draw do
           put :update, on: :collection
           post :change_password, on: :collection
           post :user_skills, on: :collection
+          post :user_languages, on: :collection
         end
 
         resources :packages do
