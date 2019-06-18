@@ -8,7 +8,7 @@ class Api::V1::User < ApplicationRecord
   has_many :qualifications, dependent: :destroy
   has_many :languages, dependent: :destroy
   has_many :experiences, dependent: :destroy
-
+  has_many :user_skills, dependent: :destroy
   validates :email, presence: true, uniqueness: true
   validates :first_name, presence: true, on: :create
   validates :last_name, presence: true, on: :create

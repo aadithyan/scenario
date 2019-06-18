@@ -104,6 +104,36 @@ module Api
           end
           return_value
         end
+
+        def create_user_skills(skills_params)
+          return_value = { status: ERROR_STATUS }
+          if skills_params.blank?
+            return_value[:message] = I18n.t('api.v1.failed_messages.parameter_missing')
+            return return_value
+          end
+          if skills_params.present? && skills_params[:user_id].blank?
+            return_value[:message] = I18n.t('api.v1.failed_messages.parameter_missing')
+            return return_value
+          end
+          user = Api::V1::User.by_user_id(skills_params[:user_id])
+          errors = []
+          if user.present?
+            skills_params[:user_skill].each do |uskill|
+              user_skill = Api::V1::UserSkill.new(uskill)
+              user_skill.user_id = user.id
+              errors.push(user_skill.errors.full_messages.join('')) unless user_skill.save
+            end
+            if errors.present? || errors.count.positive?
+              return_value[:errors] = errors.join(' , ')
+            else
+              return_value[:status] = SUCCESS_STATUS
+              return_value[:user] = user
+            end
+          else
+            return_value[:message] = I18n.t('api.v1.failed_messages.not_found')
+          end
+          return_value
+        end
       end
     end
   end

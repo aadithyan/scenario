@@ -21,15 +21,10 @@ describe 'Users' do
                    items: {
                      properties: {
                        id: { type: :integer },
-                       type: { type: :string },
-                       attributes: {
-                         properties: {
-                           name: { type: :string },
-                           keywords: {
-                             type: :array,
-                             items: { type: 'string' }
-                           }
-                         }
+                       name: { type: :string },
+                       keywords: {
+                         type: :array,
+                         items: { type: 'string' }
                        }
                      }
                    }
