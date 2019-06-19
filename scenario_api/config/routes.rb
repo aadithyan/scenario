@@ -11,6 +11,7 @@ Rails.application.routes.draw do
           post :change_password, on: :collection
           post :user_skills, on: :collection
           post :user_languages, on: :collection
+          post :user_qualifications, on: :collection
         end
 
         resources :packages do
