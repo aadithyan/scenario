@@ -5,8 +5,7 @@ import { AuthenticationService } from 'src/app/shared/services/authentication.se
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
   login_modal_data: any = {}
