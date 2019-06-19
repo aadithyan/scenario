@@ -166,6 +166,36 @@ module Api
           end
           return_value
         end
+
+        def create_user_qualifications(qualifications_params)
+          return_value = { status: ERROR_STATUS }
+          if qualifications_params.blank?
+            return_value[:message] = I18n.t('api.v1.failed_messages.parameter_missing')
+            return return_value
+          end
+          if qualifications_params.present? && qualifications_params[:user_id].blank?
+            return_value[:message] = I18n.t('api.v1.failed_messages.parameter_missing')
+            return return_value
+          end
+          user = Api::V1::User.by_user_id(qualifications_params[:user_id])
+          errors = []
+          if user.present?
+            qualifications_params[:qualifications].each do |user_qualiication_param|
+              user_qualification = Api::V1::Qualification.new(user_qualiication_param)
+              user_qualification.user_id = user.id
+              errors.push(user_qualification.errors.full_messages.join('')) unless user_qualification.save
+            end
+            if errors.present? || errors.count.positive?
+              return_value[:errors] = errors.join(' , ')
+            else
+              return_value[:status] = SUCCESS_STATUS
+              return_value[:user] = user
+            end
+          else
+            return_value[:message] = I18n.t('api.v1.failed_messages.not_found')
+          end
+          return_value
+        end
       end
     end
   end
