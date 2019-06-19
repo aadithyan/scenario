@@ -32,7 +32,7 @@ describe 'Users' do
                        gender: { type: :string },
                        active: { type: :boolean },
                        about_me: { type: :string },
-                       dob: { type: :date },
+                       dob: { type: :string },
                        address: { type: :string },
                        city: { type: :string },
                        state: { type: :string },
@@ -92,7 +92,7 @@ describe 'Users' do
                            properties: {
                              id: { type: :integer },
                              name: { type: :string },
-                             institute: { type: :integer },
+                             institute: { type: :string },
                              address: { type: :string },
                              city: { type: :string },
                              state: { type: :string },
@@ -101,6 +101,23 @@ describe 'Users' do
                              start_year: { type: :integer },
                              end_year: { type: :integer },
                              specialization: { type: :string }
+                           }
+                         }
+                       },
+                       experiences: {
+                         type: :array,
+                         items: {
+                           type: :object,
+                           properties: {
+                             id: { type: :integer },
+                             company: { type: :string },
+                             job_title: { type: :string },
+                             start_date: { type: :string },
+                             end_date: { type: :string },
+                             current: { type: :boolean },
+                             comment: { type: :string },
+                             website: { type: :string },
+                             period: { type: :string }
                            }
                          }
                        }
@@ -141,7 +158,7 @@ describe 'Users' do
                      gender: { type: :string },
                      active: { type: :boolean },
                      about_me: { type: :string },
-                     dob: { type: :date },
+                     dob: { type: :string },
                      address: { type: :string },
                      city: { type: :string },
                      state: { type: :string },
@@ -201,7 +218,7 @@ describe 'Users' do
                          properties: {
                            id: { type: :integer },
                            name: { type: :string },
-                           institute: { type: :integer },
+                           institute: { type: :string },
                            address: { type: :string },
                            city: { type: :string },
                            state: { type: :string },
@@ -210,6 +227,23 @@ describe 'Users' do
                            start_year: { type: :integer },
                            end_year: { type: :integer },
                            specialization: { type: :string }
+                         }
+                       }
+                     },
+                     experiences: {
+                       type: :array,
+                       items: {
+                         type: :object,
+                         properties: {
+                           id: { type: :integer },
+                           company: { type: :string },
+                           job_title: { type: :string },
+                           start_date: { type: :string },
+                           end_date: { type: :string },
+                           current: { type: :boolean },
+                           comment: { type: :string },
+                           website: { type: :string },
+                           period: { type: :string }
                          }
                        }
                      }
@@ -269,7 +303,7 @@ describe 'Users' do
                      gender: { type: :string },
                      active: { type: :boolean },
                      about_me: { type: :string },
-                     dob: { type: :date },
+                     dob: { type: :string },
                      address: { type: :string },
                      city: { type: :string },
                      state: { type: :string },
@@ -329,7 +363,7 @@ describe 'Users' do
                          properties: {
                            id: { type: :integer },
                            name: { type: :string },
-                           institute: { type: :integer },
+                           institute: { type: :string },
                            address: { type: :string },
                            city: { type: :string },
                            state: { type: :string },
@@ -338,6 +372,23 @@ describe 'Users' do
                            start_year: { type: :integer },
                            end_year: { type: :integer },
                            specialization: { type: :string }
+                         }
+                       }
+                     },
+                     experiences: {
+                       type: :array,
+                       items: {
+                         type: :object,
+                         properties: {
+                           id: { type: :integer },
+                           company: { type: :string },
+                           job_title: { type: :string },
+                           start_date: { type: :string },
+                           end_date: { type: :string },
+                           current: { type: :boolean },
+                           comment: { type: :string },
+                           website: { type: :string },
+                           period: { type: :string }
                          }
                        }
                      }
@@ -393,7 +444,7 @@ describe 'Users' do
                      gender: { type: :string },
                      active: { type: :boolean },
                      about_me: { type: :string },
-                     dob: { type: :date },
+                     dob: { type: :string },
                      address: { type: :string },
                      city: { type: :string },
                      state: { type: :string },
@@ -453,7 +504,7 @@ describe 'Users' do
                          properties: {
                            id: { type: :integer },
                            name: { type: :string },
-                           institute: { type: :integer },
+                           institute: { type: :string },
                            address: { type: :string },
                            city: { type: :string },
                            state: { type: :string },
@@ -462,6 +513,23 @@ describe 'Users' do
                            start_year: { type: :integer },
                            end_year: { type: :integer },
                            specialization: { type: :string }
+                         }
+                       }
+                     },
+                     experiences: {
+                       type: :array,
+                       items: {
+                         type: :object,
+                         properties: {
+                           id: { type: :integer },
+                           company: { type: :string },
+                           job_title: { type: :string },
+                           start_date: { type: :string },
+                           end_date: { type: :string },
+                           current: { type: :boolean },
+                           comment: { type: :string },
+                           website: { type: :string },
+                           period: { type: :string }
                          }
                        }
                      }
@@ -507,7 +575,7 @@ describe 'Users' do
                         work_email: { type: :string },
                         gender: { type: :string },
                         about_me: { type: :string },
-                        dob: { type: :date },
+                        dob: { type: :string },
                         address: { type: :string },
                         city: { type: :string },
                         state: { type: :string },
@@ -538,7 +606,7 @@ describe 'Users' do
                      gender: { type: :string },
                      active: { type: :boolean },
                      about_me: { type: :string },
-                     dob: { type: :date },
+                     dob: { type: :string },
                      address: { type: :string },
                      city: { type: :string },
                      state: { type: :string },
@@ -598,7 +666,7 @@ describe 'Users' do
                          properties: {
                            id: { type: :integer },
                            name: { type: :string },
-                           institute: { type: :integer },
+                           institute: { type: :string },
                            address: { type: :string },
                            city: { type: :string },
                            state: { type: :string },
@@ -607,6 +675,23 @@ describe 'Users' do
                            start_year: { type: :integer },
                            end_year: { type: :integer },
                            specialization: { type: :string }
+                         }
+                       }
+                     },
+                     experiences: {
+                       type: :array,
+                       items: {
+                         type: :object,
+                         properties: {
+                           id: { type: :integer },
+                           company: { type: :string },
+                           job_title: { type: :string },
+                           start_date: { type: :string },
+                           end_date: { type: :string },
+                           current: { type: :boolean },
+                           comment: { type: :string },
+                           website: { type: :string },
+                           period: { type: :string }
                          }
                        }
                      }
@@ -672,7 +757,7 @@ describe 'Users' do
                      gender: { type: :string },
                      active: { type: :boolean },
                      about_me: { type: :string },
-                     dob: { type: :date },
+                     dob: { type: :string },
                      address: { type: :string },
                      city: { type: :string },
                      state: { type: :string },
@@ -732,7 +817,7 @@ describe 'Users' do
                          properties: {
                            id: { type: :integer },
                            name: { type: :string },
-                           institute: { type: :integer },
+                           institute: { type: :string },
                            address: { type: :string },
                            city: { type: :string },
                            state: { type: :string },
@@ -741,6 +826,23 @@ describe 'Users' do
                            start_year: { type: :integer },
                            end_year: { type: :integer },
                            specialization: { type: :string }
+                         }
+                       }
+                     },
+                     experiences: {
+                       type: :array,
+                       items: {
+                         type: :object,
+                         properties: {
+                           id: { type: :integer },
+                           company: { type: :string },
+                           job_title: { type: :string },
+                           start_date: { type: :string },
+                           end_date: { type: :string },
+                           current: { type: :boolean },
+                           comment: { type: :string },
+                           website: { type: :string },
+                           period: { type: :string }
                          }
                        }
                      }
@@ -806,7 +908,7 @@ describe 'Users' do
                      gender: { type: :string },
                      active: { type: :boolean },
                      about_me: { type: :string },
-                     dob: { type: :date },
+                     dob: { type: :string },
                      address: { type: :string },
                      city: { type: :string },
                      state: { type: :string },
@@ -866,7 +968,7 @@ describe 'Users' do
                          properties: {
                            id: { type: :integer },
                            name: { type: :string },
-                           institute: { type: :integer },
+                           institute: { type: :string },
                            address: { type: :string },
                            city: { type: :string },
                            state: { type: :string },
@@ -875,6 +977,23 @@ describe 'Users' do
                            start_year: { type: :integer },
                            end_year: { type: :integer },
                            specialization: { type: :string }
+                         }
+                       }
+                     },
+                     experiences: {
+                       type: :array,
+                       items: {
+                         type: :object,
+                         properties: {
+                           id: { type: :integer },
+                           company: { type: :string },
+                           job_title: { type: :string },
+                           start_date: { type: :string },
+                           end_date: { type: :string },
+                           current: { type: :boolean },
+                           comment: { type: :string },
+                           website: { type: :string },
+                           period: { type: :string }
                          }
                        }
                      }
@@ -929,7 +1048,7 @@ describe 'Users' do
                     }
                   }
                 }
-      response 200, 'Response for languages created for user' do
+      response 200, 'Response for qualifications created for user' do
         schema type: :object,
                properties: {
                  data: {
@@ -946,7 +1065,7 @@ describe 'Users' do
                      gender: { type: :string },
                      active: { type: :boolean },
                      about_me: { type: :string },
-                     dob: { type: :date },
+                     dob: { type: :string },
                      address: { type: :string },
                      city: { type: :string },
                      state: { type: :string },
@@ -1006,7 +1125,7 @@ describe 'Users' do
                          properties: {
                            id: { type: :integer },
                            name: { type: :string },
-                           institute: { type: :integer },
+                           institute: { type: :string },
                            address: { type: :string },
                            city: { type: :string },
                            state: { type: :string },
@@ -1017,6 +1136,23 @@ describe 'Users' do
                            specialization: { type: :string }
                          }
                        }
+                     },
+                     experiences: {
+                       type: :array,
+                       items: {
+                         type: :object,
+                         properties: {
+                           id: { type: :integer },
+                           company: { type: :string },
+                           job_title: { type: :string },
+                           start_date: { type: :string },
+                           end_date: { type: :string },
+                           current: { type: :boolean },
+                           comment: { type: :string },
+                           website: { type: :string },
+                           period: { type: :string }
+                         }
+                       }
                      }
                    }
                  }
@@ -1024,6 +1160,161 @@ describe 'Users' do
         run_test!
       end
       response 409, 'Failed to create user qualifications' do
+        schema type: :object,
+               properties: {
+                 status: { type: :string },
+                 message: { type: :string }
+               }
+        run_test!
+      end
+    end
+  end
+
+  path '/api/v1/users/user_experiences' do
+    post 'Create User Experiences' do
+      tags 'Users'
+      consumes 'application/json'
+      produces 'application/json'
+      parameter in: :header, type: :string, name: 'content-type',
+                required: true, description: 'Content Type'
+      parameter in: :header, type: :string, name: 'Authorization',
+                required: true, description: 'Bearer <token>'
+      parameter in: :query, type: :string, name: :id,
+                required: true, description: 'User Id'
+      parameter name: :params, in: :body, required: true,
+                schema: {
+                  type: :object,
+                  properties: {
+                    qualifications: {
+                      type: :array,
+                      items: {
+                        type: :object,
+                        properties: {
+                          company: { type: :string },
+                          job_title: { type: :string },
+                          start_date: { type: :string },
+                          end_date: { type: :string },
+                          current: { type: :boolean },
+                          comment: { type: :string },
+                          website: { type: :string },
+                          period: { type: :string }
+                        }
+                      }
+                    }
+                  }
+                }
+      response 200, 'Response for experiences created for user' do
+        schema type: :object,
+               properties: {
+                 data: {
+                   properties: {
+                     id: { type: :integer },
+                     first_name: { type: :string },
+                     middle_name: { type: :string },
+                     last_name: { type: :string },
+                     email: { type: :string },
+                     password: { type: :string },
+                     authentiation_token: { type: :string },
+                     user_name: { type: :string },
+                     work_email: { type: :string },
+                     gender: { type: :string },
+                     active: { type: :boolean },
+                     about_me: { type: :string },
+                     dob: { type: :string },
+                     address: { type: :string },
+                     city: { type: :string },
+                     state: { type: :string },
+                     zip_postal_code: { type: :string },
+                     country: { type: :string },
+                     contact_no: { type: :string },
+                     emergency_contact_no: { type: :string },
+                     nationality: { type: :string },
+                     marital_status: { type: :string },
+                     user_skills: {
+                       type: :array,
+                       items: {
+                         properties: {
+                           id: { type: :integer },
+                           years: { type: :integer },
+                           months: { type: :integer },
+                           skill: {
+                             type: :object,
+                             properties: {
+                               id: { type: :integer },
+                               name: { type: :string },
+                               keywords: {
+                                 type: :array,
+                                 items: { type: :string }
+                               }
+                             }
+                           },
+                           level: {
+                             type: :object,
+                             properties: {
+                               id: { type: :integer },
+                               name: { type: :string }
+                             }
+                           }
+                         }
+                       }
+                     },
+                     languages: {
+                       type: :array,
+                       items: {
+                         type: :object,
+                         properties: {
+                           id: { type: :integer },
+                           name: { type: :string },
+                           fluency: { type: :integer },
+                           fluency_name: { type: :string },
+                           competancy: { type: :integer },
+                           competancy_name: { type: :string },
+                           comments: { type: :string }
+                         }
+                       }
+                     },
+                     qualifications: {
+                       type: :array,
+                       items: {
+                         type: :object,
+                         properties: {
+                           id: { type: :integer },
+                           name: { type: :string },
+                           institute: { type: :string },
+                           address: { type: :string },
+                           city: { type: :string },
+                           state: { type: :string },
+                           country: { type: :string },
+                           zip_postal_code: { type: :string },
+                           start_year: { type: :integer },
+                           end_year: { type: :integer },
+                           specialization: { type: :string }
+                         }
+                       }
+                     },
+                     experiences: {
+                       type: :array,
+                       items: {
+                         type: :object,
+                         properties: {
+                           id: { type: :integer },
+                           company: { type: :string },
+                           job_title: { type: :string },
+                           start_date: { type: :string },
+                           end_date: { type: :string },
+                           current: { type: :boolean },
+                           comment: { type: :string },
+                           website: { type: :string },
+                           period: { type: :string }
+                         }
+                       }
+                     }
+                   }
+                 }
+               }
+        run_test!
+      end
+      response 409, 'Failed to create user experiences' do
         schema type: :object,
                properties: {
                  status: { type: :string },
