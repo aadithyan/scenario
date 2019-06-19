@@ -3,5 +3,6 @@ export const EndPoints = {
 }
 
 export const UserActions = {
-    registerUser: 'users'    
+    registerUser: 'users',
+    loginUser: 'users/login'
 }
