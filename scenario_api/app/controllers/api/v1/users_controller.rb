@@ -3,7 +3,8 @@
 # User Controller - basic user activities
 class Api::V1::UsersController < Api::V1::ApiController
   before_action :authorize_request, except: [:create, :login]
-  INCLUDE_ASSOCIATIONS = [:languages, :qualifications, user_skills: [:skill, :level]].freeze
+  INCLUDE_ASSOCIATIONS = [:languages, :qualifications, :experiences,
+                          user_skills: [:skill, :level]].freeze
 
   def index
     render json: users, status: :ok
@@ -87,6 +88,17 @@ class Api::V1::UsersController < Api::V1::ApiController
     end
   end
 
+  def user_experiences
+    user_experience_params = user_experiences_params
+    user_experience_params[:user_id] = params[:id]
+    return_value = Api::V1::UserService.create_user_experiences(user_experience_params)
+    if return_value[:status] == SUCCESS_STATUS
+      render json: user(return_value[:user]), status: :ok
+    else
+      render json: return_value, status: :conflict
+    end
+  end
+
   private
 
   def user(user_info)
@@ -124,5 +136,10 @@ class Api::V1::UsersController < Api::V1::ApiController
     params.permit(:id, :user, qualifications: [:name, :institute, :address, :city,
                                                :state, :zip_postal_code, :country, :start_year, :end_year,
                                                :specialization])
+  end
+
+  def user_experiences_params
+    params.permit(:id, :user, experiences: [:company, :job_title, :start_date, :end_date, :current,
+                                            :comment, :website, :period])
   end
 end

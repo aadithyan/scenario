@@ -11,4 +11,5 @@ class Api::V1::UserSerializer < ActiveModel::Serializer
   has_many :user_skills, serializer: Api::V1::UserSkillSerializer
   has_many :languages, serializer: Api::V1::LanguageSerializer
   has_many :qualifications, serializer: Api::V1::QualificationSerializer
+  has_many :experiences, serializer: Api::V1::ExperienceSerializer
 end
