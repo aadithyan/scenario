@@ -13,6 +13,7 @@ Rails.application.routes.draw do
           post :user_languages, on: :collection
           post :user_qualifications, on: :collection
           post :user_experiences, on: :collection
+          post :user_proofs, on: :collection
         end
 
         resources :packages do
