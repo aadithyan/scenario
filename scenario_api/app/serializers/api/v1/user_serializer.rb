@@ -12,4 +12,5 @@ class Api::V1::UserSerializer < ActiveModel::Serializer
   has_many :languages, serializer: Api::V1::LanguageSerializer
   has_many :qualifications, serializer: Api::V1::QualificationSerializer
   has_many :experiences, serializer: Api::V1::ExperienceSerializer
+  has_many :address_proofs, serializer: Api::V1::AddressProofSerializer
 end
