@@ -10,4 +10,5 @@ class Api::V1::UserSerializer < ActiveModel::Serializer
   attributes :emergency_contact_no, :nationality, :marital_status
   has_many :user_skills, serializer: Api::V1::UserSkillSerializer
   has_many :languages, serializer: Api::V1::LanguageSerializer
+  has_many :qualifications, serializer: Api::V1::QualificationSerializer
 end
