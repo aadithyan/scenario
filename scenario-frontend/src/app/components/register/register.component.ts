@@ -21,11 +21,10 @@ export class RegisterComponent implements OnInit {
 
   register_user(registerForm:NgForm) {
     if(registerForm.valid) {
-      console.log(this.register_data);
       this.subscribe = this.authService.createUser(this.register_data).subscribe(data => {
         var status: any = data;
         console.log(status);
-      } )
+      })
     }
     
   }

@@ -9,11 +9,14 @@ import { AuthenticationService } from './shared/services/authentication.service'
 import { RegisterUser } from './models/register.modal';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BaseInterceptor } from './shared/interceptors/base.interceptor';
+import { LoginComponent } from './components/login/login.component';
+import { LoginUser } from './models/login.modal';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +27,7 @@ import { BaseInterceptor } from './shared/interceptors/base.interceptor';
   providers: [HttpService, 
               AuthenticationService, 
               RegisterUser,
+              LoginUser,
               {
                 provide: HTTP_INTERCEPTORS,
                 useClass: BaseInterceptor,
