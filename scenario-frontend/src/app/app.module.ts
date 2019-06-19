@@ -1,9 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from './components/register/register.component';
+import { HttpService } from './shared/services/http.service';
+import { AuthenticationService } from './shared/services/authentication.service';
+import { RegisterUser } from './models/register.modal';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BaseInterceptor } from './shared/interceptors/base.interceptor';
 
 @NgModule({
   declarations: [
@@ -12,9 +17,18 @@ import { RegisterComponent } from './register/register.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [HttpService, 
+              AuthenticationService, 
+              RegisterUser,
+              {
+                provide: HTTP_INTERCEPTORS,
+                useClass: BaseInterceptor,
+                multi: true
+              },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
