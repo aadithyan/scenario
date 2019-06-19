@@ -3,7 +3,7 @@
 # User Controller - basic user activities
 class Api::V1::UsersController < Api::V1::ApiController
   before_action :authorize_request, except: [:create, :login]
-  INCLUDE_ASSOCIATIONS = [:languages, :qualifications, :experiences,
+  INCLUDE_ASSOCIATIONS = [:languages, :qualifications, :experiences, :address_proofs,
                           user_skills: [:skill, :level]].freeze
 
   def index
@@ -99,6 +99,17 @@ class Api::V1::UsersController < Api::V1::ApiController
     end
   end
 
+  def user_proofs
+    user_proof_params = user_proofs_params
+    user_proof_params[:user_id] = params[:id]
+    return_value = Api::V1::UserService.create_user_proofs(user_proof_params)
+    if return_value[:status] == SUCCESS_STATUS
+      render json: user(return_value[:user]), status: :ok
+    else
+      render json: return_value, status: :conflict
+    end
+  end
+
   private
 
   def user(user_info)
@@ -141,5 +152,9 @@ class Api::V1::UsersController < Api::V1::ApiController
   def user_experiences_params
     params.permit(:id, :user, experiences: [:company, :job_title, :start_date, :end_date, :current,
                                             :comment, :website, :period])
+  end
+
+  def user_proofs_params
+    params.permit(:id, :user, proofs: [:name, :proof_type, :proof_no, :issued_date, :expiry_date, :active])
   end
 end

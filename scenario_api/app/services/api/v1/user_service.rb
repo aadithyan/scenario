@@ -226,6 +226,36 @@ module Api
           end
           return_value
         end
+
+        def create_user_proofs(proofs_params)
+          return_value = { status: ERROR_STATUS }
+          if proofs_params.blank?
+            return_value[:message] = I18n.t('api.v1.failed_messages.parameter_missing')
+            return return_value
+          end
+          if proofs_params.present? && proofs_params[:user_id].blank?
+            return_value[:message] = I18n.t('api.v1.failed_messages.parameter_missing')
+            return return_value
+          end
+          user = Api::V1::User.by_user_id(proofs_params[:user_id])
+          errors = []
+          if user.present?
+            proofs_params[:proofs].each do |user_proofs_param|
+              user_proof = Api::V1::AddressProof.new(user_proofs_param)
+              user_proof.user_id = user.id
+              errors.push(user_proof.errors.full_messages.join('')) unless user_proof.save
+            end
+            if errors.present? || errors.count.positive?
+              return_value[:errors] = errors.join(' , ')
+            else
+              return_value[:status] = SUCCESS_STATUS
+              return_value[:user] = user
+            end
+          else
+            return_value[:message] = I18n.t('api.v1.failed_messages.not_found')
+          end
+          return_value
+        end
       end
     end
   end
