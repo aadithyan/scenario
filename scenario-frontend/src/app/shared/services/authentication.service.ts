@@ -14,4 +14,9 @@ export class AuthenticationService {
     const url = EndPoints.BASE_URL + UserActions.registerUser;
     return this.httpService.post(url, data);
   }
+
+  public loginUser(data) {
+      const url = EndPoints.BASE_URL + UserActions.loginUser;
+      return this.httpService.post(url, data);
+  }
 }
