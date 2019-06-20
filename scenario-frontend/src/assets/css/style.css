@@ -3427,23 +3427,23 @@ File: Pages
 }
 
 .toast-success {
-  background-color: rgba(16, 196, 105, 0.8);
-  border: 2px solid #10c469;
+  background-color: rgba(16, 196, 105, 0.8) !important;
+  border: 2px solid #10c469 !important;
 }
 
 .toast-error {
-  background-color: rgba(255, 91, 91, 0.8);
-  border: 2px solid #ff5b5b;
+  background-color: rgba(255, 91, 91, 0.8) !important;
+  border: 2px solid #ff5b5b important!;
 }
 
 .toast-info {
-  background-color: rgba(53, 184, 224, 0.8);
-  border: 2px solid #35b8e0;
+  background-color: rgba(53, 184, 224, 0.8) !important;
+  border: 2px solid #35b8e0 !important;
 }
 
 .toast-warning {
-  background-color: rgba(249, 200, 81, 0.8);
-  border: 2px solid #f9c851;
+  background-color: rgba(249, 200, 81, 0.8) !important;
+  border: 2px solid #f9c851 !important;
 }
 
 /* =========== */
@@ -6403,5 +6403,13 @@ File: Responsive
   .user-list .user-list-item .user-desc {
     margin-left: 0;
   }
+}
+
+.ngx-toastr {
+  width: 500px !important;
+}
+
+.text-danger {
+  color: #ff5b5b;
 }
 /*# sourceMappingURL=style.css.map */

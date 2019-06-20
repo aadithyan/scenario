@@ -11,7 +11,12 @@
       <form class="form-horizontal m-t-20" #registerForm="ngForm">
         <div class="form-group ">
           <div class="col-xs-12">
-            <input class="form-control" type="text" [(ngModel)]="register_data.user.first_name" name="first_name" required placeholder="First Name">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text text-danger">*</span>
+              </div>
+              <input class="form-control" type="text" [(ngModel)]="register_data.user.first_name" name="first_name" required placeholder="First Name">
+            </div>
           </div>
         </div>
         <div class="form-group ">
@@ -21,22 +26,42 @@
         </div>  
         <div class="form-group ">
           <div class="col-xs-12">
-            <input class="form-control" type="text" [(ngModel)]="register_data.user.last_name" name="last_name" required placeholder="Last Name">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text text-danger">*</span>
+              </div>
+              <input class="form-control" type="text" [(ngModel)]="register_data.user.last_name" name="last_name" required placeholder="Last Name">
+            </div>
           </div>
         </div>
         <div class="form-group ">
           <div class="col-xs-12">
-            <input class="form-control" [(ngModel)]="register_data.user.user_name" name="user_name" type="text" required placeholder="Username">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text text-danger">*</span>
+              </div>
+              <input class="form-control" [(ngModel)]="register_data.user.user_name" name="user_name" type="text" required placeholder="Username">
+            </div>
           </div>
         </div>
         <div class="form-group ">
           <div class="col-xs-12">
-            <input class="form-control" type="email" [(ngModel)]="register_data.user.email" name="email" required email placeholder="Email">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text text-danger">*</span>
+              </div>
+              <input class="form-control" type="email" [(ngModel)]="register_data.user.email" name="email" required email placeholder="Email">
+            </div>
           </div>
         </div>
         <div class="form-group">
           <div class="col-xs-12">
-            <input class="form-control" type="password" [(ngModel)]="register_data.user.password" name="password" required="" placeholder="Password">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text text-danger">*</span>
+              </div>
+              <input class="form-control" type="password" [(ngModel)]="register_data.user.password" name="password" required="" placeholder="Password">
+            </div>
           </div>
         </div>
         <div class="form-group text-center m-t-40 mb-0">
