@@ -10,6 +10,7 @@ import {
 	HttpErrorResponse
 } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { ResponseService } from '../services/response.service';
 
 @Injectable()
 
@@ -18,7 +19,7 @@ export class BaseInterceptor implements HttpInterceptor {
 	cyncCookie: any;
 	authorizationHeader: any;
 
-	constructor(private router: Router) {}
+	constructor(private router: Router, private responseService: ResponseService) {}
 
 	intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 		const fromPage = request.headers.has('Component-Page');
@@ -31,9 +32,7 @@ export class BaseInterceptor implements HttpInterceptor {
 				return event;
 			}),
 			catchError((error: HttpErrorResponse) => {
-				if( error.status === 401 ) {
-				}else{
-				}				
+				this.responseService.errorResponse(error);								
 				return throwError(error);
 			})
 		);
