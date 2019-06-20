@@ -6408,4 +6408,8 @@ File: Responsive
 .ngx-toastr {
   width: 500px !important;
 }
+
+.text-danger {
+  color: #ff5b5b;
+}
 /*# sourceMappingURL=style.css.map */

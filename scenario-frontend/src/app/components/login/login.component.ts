@@ -21,11 +21,10 @@ export class LoginComponent implements OnInit {
   login_user(loginForm:NgForm){
     if(loginForm.valid){
       this.subscribe = this.authService.loginUser(this.login_modal_data).subscribe(data => {
-        var status: any = data;
         this.responseService.show_messages("success", "Successfully Logged In");
       })
     } else {
-      this.responseService.show_messages("error", "Email or password should not be empty");
+      this.responseService.show_messages("error", "Required Fields are empty");
     }
   }
 
