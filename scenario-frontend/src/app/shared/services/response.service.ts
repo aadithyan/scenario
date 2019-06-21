@@ -21,17 +21,6 @@ export class ResponseService {
             break;
         case 404:
             this.toastr.error("Looks like this page is unavailable");
-    }
-  }
-
-  public successResponse(response, displayMessage) {
-    console.log(response);  
-    switch(response.status) {
-        case 200:
-            this.toastr.success(displayMessage);
-            break;
-        case 201:
-            this.toastr.success(displayMessage);
             break;
     }
   }
