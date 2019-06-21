@@ -14,11 +14,19 @@ import { LoginComponent } from './components/login/login.component';
 import { LoginUser } from './models/login.modal';
 import { ToastrModule }  from 'ngx-toastr';
 import { ResponseService } from './shared/services/response.service';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { LayoutComponent } from './components/layout/layout.component';
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderComponent,
+    FooterComponent,
+    MenuComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +39,6 @@ import { ResponseService } from './shared/services/response.service';
       tapToDismiss: true,
       positionClass: 'toast-top-right',
       preventDuplicates: true,
-      progressBar: true,
       easing: 'easeOutBounce',
       newestOnTop: true
     })
