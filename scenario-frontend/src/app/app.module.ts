@@ -18,6 +18,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { DashboardComponent } from './modules/dashboard/pages/components/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { LayoutComponent } from './components/layout/layout.component';
     HeaderComponent,
     FooterComponent,
     MenuComponent,
-    LayoutComponent
+    LayoutComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
