@@ -29,7 +29,7 @@ File: Core
    Common
 ============= */
 body {
-  background: #ebeff2;
+  background: #ebeff2 !important;;
   font-family: "Roboto", sans-serif;
   margin: 0;
   padding-bottom: 60px;
@@ -50,17 +50,17 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   line-height: 43px;
-  font-size: 36px;
+  font-size: 36px !important;
 }
 
 h2 {
   line-height: 35px;
-  font-size: 30px;
+  font-size: 30px !important;
 }
 
 h3 {
   line-height: 30px;
-  font-size: 24px;
+  font-size: 24px !important;
 }
 
 h3 small {
@@ -69,7 +69,7 @@ h3 small {
 
 h4 {
   line-height: 22px;
-  font-size: 18px;
+  font-size: 18px !important;
 }
 
 h4 small {
@@ -77,15 +77,15 @@ h4 small {
 }
 
 h5 {
-  font-size: 15px;
+  font-size: 15px !important;
 }
 
 h5 small {
-  color: #444444;
+  color: #444444 !important;
 }
 
 h6 {
-  font-size: 12px;
+  font-size: 12px !important;
 }
 
 p {
@@ -97,7 +97,7 @@ p {
 }
 
 b {
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 
 a:hover {
@@ -153,7 +153,7 @@ a:focus {
 
 /* Page titles */
 .page-title {
-  font-size: 20px;
+  font-size: 20px !important;
   margin-bottom: 0;
   margin-top: 0;
   line-height: 70px;
