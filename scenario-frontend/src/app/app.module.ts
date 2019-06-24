@@ -22,6 +22,7 @@ import { DashboardComponent } from './modules/dashboard/pages/components/dashboa
 import { ProjectListComponent } from './modules/dashboard/components/project-list/project-list.component';
 import { RemindersComponent } from './modules/dashboard/components/reminders/reminders.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { BoxCardsComponent } from './modules/cards/components/box-cards/box-cards.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     DashboardComponent,
     ProjectListComponent,
     RemindersComponent,
-    SidebarComponent
+    SidebarComponent,
+    BoxCardsComponent
   ],
   imports: [
     BrowserModule,
