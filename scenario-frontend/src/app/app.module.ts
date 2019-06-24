@@ -19,6 +19,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { DashboardComponent } from './modules/dashboard/pages/components/dashboard/dashboard.component';
+import { ProjectListComponent } from './modules/dashboard/components/project-list/project-list.component';
+import { RemindersComponent } from './modules/dashboard/components/reminders/reminders.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +31,10 @@ import { DashboardComponent } from './modules/dashboard/pages/components/dashboa
     FooterComponent,
     MenuComponent,
     LayoutComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProjectListComponent,
+    RemindersComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
