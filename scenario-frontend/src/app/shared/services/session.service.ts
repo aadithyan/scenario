@@ -3,6 +3,7 @@ import { HttpService } from './../../shared/services/http.service';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { EndPoints, UserActions } from '../utilities/endpoints';
 import { Router } from '@angular/router';
+import { ResponseService } from './response.service';
 
 
 @Injectable()
@@ -10,7 +11,8 @@ export class SessionService {
 
   constructor(private httpService: HttpService,
               private http: HttpClient,
-              private router: Router) { }
+              private router: Router,
+              private responseService: ResponseService) { }
 
   
   generateSession(response){
@@ -19,6 +21,7 @@ export class SessionService {
 
   logout(){
     sessionStorage.removeItem("user");
-    this.router.navigate(['/login'])
+    this.responseService.show_messages("success", "Successfully Logged Out");
+    this.router.navigate(['/login']);
   }
 }

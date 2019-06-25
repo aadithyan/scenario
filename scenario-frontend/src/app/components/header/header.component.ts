@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
+import { SessionService } from 'src/app/shared/services/session.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,7 @@ import * as $ from 'jquery';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sessionService: SessionService) { }
 
   ngOnInit() {
     this.toggleNotifications();
@@ -19,6 +20,10 @@ export class HeaderComponent implements OnInit {
       $(".right-bar").toggle();
       $('.wrapper').toggleClass('right-bar-enabled');
     });
+  }
+
+  logout() {
+    this.sessionService.logout();
   }
 
 }
