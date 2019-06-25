@@ -1,0 +1,10 @@
+<div class="card-box widget-user">
+  <div>
+    <img src="{{infoCardObject.image_url}}" class="img-responsive rounded-circle" alt="user">
+    <div class="wid-u-info">
+      <h5 class="mt-0 m-b-5">{{infoCardObject.name}}</h5>
+      <p class="text-muted m-b-5 font-13">{{infoCardObject.email}}</p>
+      <small [ngClass]="[infoCardObject.class]" ><b>{{infoCardObject.role}}</b></small>
+    </div>
+  </div>
+</div>
