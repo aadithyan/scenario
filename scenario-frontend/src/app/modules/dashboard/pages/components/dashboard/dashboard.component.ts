@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MorrisJsModule } from 'angular-morris-js';
 
 @Component({
   selector: 'app-dashboard',

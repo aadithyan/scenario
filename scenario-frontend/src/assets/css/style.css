@@ -103,6 +103,7 @@ b {
 a:hover {
   outline: 0;
   text-decoration: none;
+  cursor: pointer;
 }
 
 a:active {
