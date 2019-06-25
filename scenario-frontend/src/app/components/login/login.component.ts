@@ -4,6 +4,7 @@ import { LoginUser } from 'src/app/models/login.modal';
 import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 import { ResponseService } from 'src/app/shared/services/response.service';
 import { Router } from '@angular/router';
+import { SessionService } from 'src/app/shared/services/session.service';
 
 @Component({
   selector: 'app-login',
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
   subscribe: any
   constructor(private loginModal: LoginUser, private authService: AuthenticationService, 
               private responseService: ResponseService,
+              private sessionService: SessionService,
               private route: Router) { }
 
   ngOnInit() {
@@ -23,6 +25,7 @@ export class LoginComponent implements OnInit {
   login_user(loginForm:NgForm){
     if(loginForm.valid){
       this.subscribe = this.authService.loginUser(this.login_modal_data).subscribe(data => {
+        this.sessionService.generateSession(data);
         this.responseService.show_messages("success", "Successfully Logged In");
         this.route.navigate(['/dashboard'])
       })

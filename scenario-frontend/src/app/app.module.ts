@@ -19,6 +19,13 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { DashboardComponent } from './modules/dashboard/pages/components/dashboard/dashboard.component';
+import { ProjectListComponent } from './modules/dashboard/components/project-list/project-list.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { BoxCardsComponent } from './modules/cards/components/box-cards/box-cards.component';
+import { ListCardComponent } from './modules/list_cards/components/list-card/list-card.component';
+import { SessionService } from './shared/services/session.service';
+import { SessionGuard } from './shared/guards/session.guard';
+import { InfoCardsComponent } from './modules/cards/components/info-cards/info-cards.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +35,12 @@ import { DashboardComponent } from './modules/dashboard/pages/components/dashboa
     FooterComponent,
     MenuComponent,
     LayoutComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProjectListComponent,
+    SidebarComponent,
+    BoxCardsComponent,
+    ListCardComponent,
+    InfoCardsComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +59,9 @@ import { DashboardComponent } from './modules/dashboard/pages/components/dashboa
   ],
   providers: [HttpService, 
               AuthenticationService,
+              SessionService,
               ResponseService,
+              SessionGuard,
               RegisterUser,
               LoginUser,
               {
