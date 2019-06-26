@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
         this.sessionService.generateSession(data);
         this.responseService.show_messages("success", "Successfully Logged In");
         this.route.navigate(['/dashboard'])
-      })
+      });
     } else {
       this.responseService.show_messages("error", "Required Fields are empty");
     }

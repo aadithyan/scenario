@@ -14,13 +14,16 @@ export class ResponseService {
   public errorResponse(response) {
     switch(response.status) {
         case 409:
-            this.toastr.error(response.error.message);
+            this.show_messages("error",response.error.message);
             break;
         case 500:
-            this.toastr.error(response.statusText);
+            this.show_messages("error", response.statusText);
             break;
         case 404:
-            this.toastr.error("Looks like this page is unavailable");
+            this.show_messages("error", "Looks like this page is unavailable");
+            break;
+        case 0:
+            this.show_messages("error", "Oops! Looks like the service is not running");  
             break;
     }
   }
