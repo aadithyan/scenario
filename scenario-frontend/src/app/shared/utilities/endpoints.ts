@@ -4,5 +4,6 @@ export const EndPoints = {
 
 export const UserActions = {
     registerUser: 'users',
-    loginUser: 'users/login'
+    loginUser: 'users/login',
+    changePassword: 'users/change_password'
 }

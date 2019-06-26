@@ -19,6 +19,10 @@ export class SessionService {
     sessionStorage.setItem("user", JSON.stringify(response));
   }
 
+  getCurrentSession() {
+    return JSON.parse(sessionStorage.getItem("user"));
+  }
+
   logout(){
     sessionStorage.removeItem("user");
     this.responseService.show_messages("success", "Successfully Logged Out");

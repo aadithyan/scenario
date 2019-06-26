@@ -26,6 +26,9 @@ import { ListCardComponent } from './modules/list_cards/components/list-card/lis
 import { SessionService } from './shared/services/session.service';
 import { SessionGuard } from './shared/guards/session.guard';
 import { InfoCardsComponent } from './modules/cards/components/info-cards/info-cards.component';
+import { ChangePasswordComponent } from './modules/user/pages/components/change-password/change-password.component';
+import { UserService } from './shared/services/user.service';
+import { ChangePassword } from './modules/user/models/change_password.modal';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +43,8 @@ import { InfoCardsComponent } from './modules/cards/components/info-cards/info-c
     SidebarComponent,
     BoxCardsComponent,
     ListCardComponent,
-    InfoCardsComponent
+    InfoCardsComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +68,8 @@ import { InfoCardsComponent } from './modules/cards/components/info-cards/info-c
               SessionGuard,
               RegisterUser,
               LoginUser,
+              ChangePassword,
+              UserService,
               {
                 provide: HTTP_INTERCEPTORS,
                 useClass: BaseInterceptor,
