@@ -5,14 +5,14 @@ import { Observable } from 'rxjs';
 import { EndPoints, UserActions } from '../utilities/endpoints';
 
 @Injectable()
-export class UserService {
+export class LevelService {
 
   constructor(private httpService: HttpService,
               private http: HttpClient) { }
 
-  public changePassword(data, userId) {
-    const url = EndPoints.BASE_URL + UserActions.changePassword + '/?id=' + userId;
-    return this.httpService.post(url, data);
-  }
+	public getLevels() {
+		const url = EndPoints.BASE_URL + UserActions.listLevels;
+		return this.httpService.get(url);
+	}
 
 }

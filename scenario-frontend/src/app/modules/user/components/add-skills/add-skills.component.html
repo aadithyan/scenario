@@ -1,0 +1,66 @@
+<div class="custom-modal-title">
+  <h4 class="modal-title">Add New Skills</h4>
+</div>
+<form class="form-horizontal" role="form" #addSkillsForm="ngForm">
+  <div class="row">
+    <div class="col-12">
+      <div class="card-box">
+        <h4 class="m-t-0 header-title">Add Your Skills</h4>
+        <p class="text-muted font-14">No Skills, add it here. Let people know about your skills</p>
+        <div class="row">
+          <div class="col-12">
+            <div class="p-20">
+              
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label class="col-form-label">Skill</label>
+                    <input [(ngModel)]="selectedSkillValue" name="s" autocomplete="off" required
+                      [typeahead]="skills"
+                      [isAnimated]="true"
+                      typeaheadOptionField="name"
+                      [typeaheadScrollable]="true"
+                      [typeaheadOptionsInScrollableView]="15"
+                      (typeaheadOnSelect)="onSelect($event)"
+                      class="form-control">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                      <label for="inputEmail4" class="col-form-label">Years</label>
+                      <input type="number" required [(ngModel)]="years" class="form-control" name="years" id="inputEmail4" placeholder="0">
+                  </div>
+                  <div class="form-group col-md-6">
+                      <label for="inputPassword4" class="col-form-label">Months</label>
+                      <input type="number" [(ngModel)]="months" class="form-control" name="months" id="inputPassword4" placeholder="0">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4" class="col-form-label">Expertise Level</label>
+                    <ng-select [items]="levels" name="level" required
+                    bindLabel="name"
+                    bindValue="id"
+                    [(ngModel)]="selectedLevel"
+                    placeholder="Select Expertise Level"></ng-select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <a class="btn btn-purple btn-trans waves-effect w-md waves-info m-b-5" (click)="addMoreSkills(addSkillsForm); addSkillsForm.reset();">
+                      <i class="ti-plus"></i>&nbsp;Add More
+                    </a>
+                  </div>
+                </div>    
+            </div>
+          </div>
+        </div>
+        <!-- end row -->
+      </div> <!-- end card-box -->
+    </div><!-- end col -->
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" (click)="onSubmitSkills(addSkillsForm);">Submit</button>
+    <button (click)="activeModal.dismiss('Close clicked')" class="btn btn-danger">Close</button>  
+  </div>
+</form>  
+
