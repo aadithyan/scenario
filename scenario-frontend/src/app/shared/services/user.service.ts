@@ -15,4 +15,9 @@ export class UserService {
     return this.httpService.post(url, data);
   }
 
+  public saveUserQualification(data, userId) {
+    const url = EndPoints.BASE_URL + UserActions.createQualifications + '/?id=' + userId;
+    return this.httpService.post(url, data);
+  }
+
 }
