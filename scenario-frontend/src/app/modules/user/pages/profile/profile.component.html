@@ -1,0 +1,75 @@
+<app-layout></app-layout>
+<div class="wrapper">
+  <div class="container-fluid">
+    <!-- Page-Title -->
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="btn-group pull-right m-t-20">
+          <button type="button" class="btn btn-custom dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="false">Settings </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item">Edit</a>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item">Deactivate</a>
+            <!-- item-->
+            <a href="javascript:void(0);" class="dropdown-item text-danger">Delete</a>
+          </div>
+        </div>
+        <h4 class="page-title">Profile</h4>
+      </div>
+    </div>
+    <!-- end page title end breadcrumb -->
+    <div class="row">
+      <div class="col-sm-8">
+        <app-user-card></app-user-card>
+        <!--/ meta -->
+        <form method="post" class="card-box">
+          <span class="input-icon icon-right">
+            <textarea rows="2" class="form-control" placeholder="Post a new message"></textarea>
+          </span>
+          <div class="p-t-10 pull-right">
+            <a class="btn btn-sm btn-primary waves-effect waves-light">Send</a>
+          </div>
+          <ul class="nav nav-pills profile-pills m-t-10">
+            <li><a href="#"><i class="fa fa-user"></i></a></li>
+            <li><a href="#"><i class="fa fa-location-arrow"></i></a></li>
+            <li><a href="#"><i class=" fa fa-camera"></i></a></li>
+            <li><a href="#"><i class="fa fa-smile-o"></i></a></li>
+          </ul>
+        </form>
+        <div class="card-box">
+          <div class="comment">
+            <img src="assets/images/users/avatar-1.jpg" alt="" class="comment-avatar">
+            <div class="comment-body">
+              <div class="comment-text">
+                <div class="comment-header">
+                  <a href="#" title="">Adam Jansen</a><span>about 2 minuts ago</span>
+                </div>
+                Story based around the idea of time lapse, animation to post soon!
+                <div class="m-t-15">
+                  <a href=""><img src="assets/images/small/img1.jpg" class="thumb-md"></a>
+                  <a href=""><img src="assets/images/small/img2.jpg" class="thumb-md"></a>
+                  <a href=""><img src="assets/images/small/img3.jpg" class="thumb-md"></a>
+                </div>
+              </div>
+              <div class="comment-footer">
+                <a href="#"><i class="fa fa-thumbs-o-up"></i></a>
+                <a href="#"><i class="fa fa-thumbs-o-down"></i></a>
+                <a href="#">Reply</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <app-details-card></app-details-card>
+        <!-- Add More cards here -->
+        <app-skills-card></app-skills-card>
+      </div>
+    </div>
+  </div> <!-- end container -->
+  <!-- Right Sidebar -->
+  <app-sidebar></app-sidebar>
+</div>
+<!-- end wrapper -->
+<app-footer></app-footer>

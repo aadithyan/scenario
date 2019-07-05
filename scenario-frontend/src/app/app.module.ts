@@ -26,9 +26,22 @@ import { ListCardComponent } from './modules/list_cards/components/list-card/lis
 import { SessionService } from './shared/services/session.service';
 import { SessionGuard } from './shared/guards/session.guard';
 import { InfoCardsComponent } from './modules/cards/components/info-cards/info-cards.component';
-import { ChangePasswordComponent } from './modules/user/pages/components/change-password/change-password.component';
 import { UserService } from './shared/services/user.service';
 import { ChangePassword } from './modules/user/models/change_password.modal';
+import { ChangePasswordComponent } from './modules/user/pages/change-password/change-password.component';
+import { ProfileComponent } from './modules/user/pages/profile/profile.component';
+import { UserCardComponent } from './modules/user/components/user-card/user-card.component';
+import { SkillsCardComponent } from './modules/user/components/skills-card/skills-card.component';
+import { DetailsCardComponent } from './modules/user/components/details-card/details-card.component';
+import { AddSkillsComponent } from './modules/user/components/add-skills/add-skills.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { LevelService } from './shared/services/levels.service';
+import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
+import { SkillService } from './shared/services/skill.service';
+import { UserSkills } from './modules/user/models/user_skills.modal';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +57,12 @@ import { ChangePassword } from './modules/user/models/change_password.modal';
     BoxCardsComponent,
     ListCardComponent,
     InfoCardsComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    ProfileComponent,
+    UserCardComponent,
+    SkillsCardComponent,
+    DetailsCardComponent,
+    AddSkillsComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +70,9 @@ import { ChangePassword } from './modules/user/models/change_password.modal';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgbModule,
+    NgSelectModule,
+    TypeaheadModule.forRoot(),
     ToastrModule.forRoot({
       closeButton: false,
       tapToDismiss: true,
@@ -61,6 +82,7 @@ import { ChangePassword } from './modules/user/models/change_password.modal';
       newestOnTop: true
     })
   ],
+  entryComponents: [AddSkillsComponent],
   providers: [HttpService, 
               AuthenticationService,
               SessionService,
@@ -69,7 +91,10 @@ import { ChangePassword } from './modules/user/models/change_password.modal';
               RegisterUser,
               LoginUser,
               ChangePassword,
+              UserSkills,
               UserService,
+              LevelService,
+              SkillService,
               {
                 provide: HTTP_INTERCEPTORS,
                 useClass: BaseInterceptor,

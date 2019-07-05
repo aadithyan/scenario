@@ -136,6 +136,7 @@ class Api::V1::UsersController < Api::V1::ApiController
   end
 
   def user_skills_params
+    params.delete(:user)
     params.permit(:id, user_skill: [:level_id, :skill_id, :years, :months])
   end
 

@@ -124,7 +124,7 @@ module Api
               errors.push(user_skill.errors.full_messages.join('')) unless user_skill.save
             end
             if errors.present? || errors.count.positive?
-              return_value[:errors] = errors.join(' , ')
+              return_value[:message] = errors.uniq.join(' , ')
             else
               return_value[:status] = SUCCESS_STATUS
               return_value[:user] = user
@@ -156,7 +156,7 @@ module Api
               errors.push(user_language.errors.full_messages.join('')) unless user_language.save
             end
             if errors.present? || errors.count.positive?
-              return_value[:errors] = errors.join(' , ')
+              return_value[:message] = errors.uniq.join(' , ')
             else
               return_value[:status] = SUCCESS_STATUS
               return_value[:user] = user
@@ -186,7 +186,7 @@ module Api
               errors.push(user_qualification.errors.full_messages.join('')) unless user_qualification.save
             end
             if errors.present? || errors.count.positive?
-              return_value[:errors] = errors.join(' , ')
+              return_value[:message] = errors.uniq.join(' , ')
             else
               return_value[:status] = SUCCESS_STATUS
               return_value[:user] = user
@@ -216,7 +216,7 @@ module Api
               errors.push(user_experience.errors.full_messages.join('')) unless user_experience.save
             end
             if errors.present? || errors.count.positive?
-              return_value[:errors] = errors.join(' , ')
+              return_value[:message] = errors.uniq.join(' , ')
             else
               return_value[:status] = SUCCESS_STATUS
               return_value[:user] = user
@@ -246,7 +246,7 @@ module Api
               errors.push(user_proof.errors.full_messages.join('')) unless user_proof.save
             end
             if errors.present? || errors.count.positive?
-              return_value[:errors] = errors.join(' , ')
+              return_value[:message] = errors.uniq.join(' , ')
             else
               return_value[:status] = SUCCESS_STATUS
               return_value[:user] = user

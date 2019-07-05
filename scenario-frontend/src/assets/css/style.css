@@ -944,12 +944,13 @@ select[multiple] {
   border-color: #DDDDDD;
   border-radius: 2px;
   box-shadow: none;
-  padding: 25px;
+  padding: 2px;
 }
 
 .modal .modal-dialog .modal-content .modal-header {
   border-bottom-width: 2px;
   margin: 0;
+  background: #435966;
   padding: 0;
   padding-bottom: 15px;
 }
@@ -6413,4 +6414,5 @@ File: Responsive
 .text-danger {
   color: #ff5b5b;
 }
+
 /*# sourceMappingURL=style.css.map */

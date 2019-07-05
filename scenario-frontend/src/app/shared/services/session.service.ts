@@ -19,6 +19,10 @@ export class SessionService {
     sessionStorage.setItem("user", JSON.stringify(response));
   }
 
+  removeSession(){
+    sessionStorage.removeItem("user");
+  }
+
   getCurrentSession() {
     return JSON.parse(sessionStorage.getItem("user"));
   }
