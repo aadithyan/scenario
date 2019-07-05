@@ -8,5 +8,6 @@ export const UserActions = {
     changePassword: 'users/change_password',
     listLevels: 'levels',
     listSkills: 'skills',
-    createUserSkills: 'users/user_skills'
+    createUserSkills: 'users/user_skills',
+    createQualifications: 'users/user_qualifications'
 }

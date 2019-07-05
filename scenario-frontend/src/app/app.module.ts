@@ -41,6 +41,9 @@ import { LevelService } from './shared/services/levels.service';
 import { TypeaheadModule } from 'ngx-bootstrap/typeahead';
 import { SkillService } from './shared/services/skill.service';
 import { UserSkills } from './modules/user/models/user_skills.modal';
+import { QualificationsComponent } from './modules/user/components/qualifications/qualifications.component';
+import { AddQualificationsComponent } from './modules/user/components/add-qualifications/add-qualifications.component';
+import { UserQualifications } from './modules/user/models/user_qulifications.modal';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,9 @@ import { UserSkills } from './modules/user/models/user_skills.modal';
     UserCardComponent,
     SkillsCardComponent,
     DetailsCardComponent,
-    AddSkillsComponent
+    AddSkillsComponent,
+    QualificationsComponent,
+    AddQualificationsComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +87,7 @@ import { UserSkills } from './modules/user/models/user_skills.modal';
       newestOnTop: true
     })
   ],
-  entryComponents: [AddSkillsComponent],
+  entryComponents: [AddSkillsComponent, AddQualificationsComponent],
   providers: [HttpService, 
               AuthenticationService,
               SessionService,
@@ -92,6 +97,7 @@ import { UserSkills } from './modules/user/models/user_skills.modal';
               LoginUser,
               ChangePassword,
               UserSkills,
+              UserQualifications,
               UserService,
               LevelService,
               SkillService,

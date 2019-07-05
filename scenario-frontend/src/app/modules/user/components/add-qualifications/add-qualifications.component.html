@@ -1,0 +1,92 @@
+<div class="custom-modal-title">
+  <h4 class="modal-title">Add Qualifications</h4>
+</div>
+<form class="form-horizontal" role="form" #addQualificationsForm="ngForm">
+  <div class="row">
+    <div class="col-12">
+      <div class="card-box">
+        <h4 class="m-t-0 header-title">Add Your Qualifications</h4>
+        <p class="text-muted font-14">Add your qualifications here. Let people know about your qualifications</p>
+        <div class="row">
+          <div class="col-12">
+            <div class="p-20">              
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label class="col-form-label">Name</label>
+                  <input type="text" required class="form-control" [(ngModel)]="name" name="name" id="inputEmail4" placeholder="">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4" class="col-form-label">Specialization</label>
+                  <input type="text" required class="form-control" [(ngModel)]="specialization" name="specialization" id="inputEmail4" placeholder="">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4" class="col-form-label">Institute</label>
+                    <input type="text" required class="form-control" [(ngModel)]="institute" name="institute" id="inputEmail4" placeholder="">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4" class="col-form-label">Address</label>
+                    <textarea class="form-control" cols="15" rows="5" name="address" [(ngModel)]="address"></textarea>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4" class="col-form-label">City</label>
+                  <input type="text" required class="form-control" name="city" [(ngModel)]="city" id="inputEmail4" placeholder="">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4" class="col-form-label">State</label>
+                  <input type="text" required class="form-control" name="state" [(ngModel)]="state" id="inputEmail4" placeholder="">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4" class="col-form-label">Country</label>
+                  <input type="text" required class="form-control" name="country" [(ngModel)]="country" id="inputEmail4" placeholder="">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4" class="col-form-label">Zip / Postal Code</label>
+                  <input type="text" required class="form-control" name="zip_postal_code" [(ngModel)]="zip_postal_code" id="inputEmail4" placeholder="">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4" class="col-form-label">Start Year</label>
+                  <input type="text" required class="form-control" name="start_year" [(ngModel)]="start_year" id="inputEmail4" placeholder="">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4" class="col-form-label">End Year</label>
+                  <input type="text" required class="form-control" name="end_year" [(ngModel)]="end_year" id="inputEmail4" placeholder="">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <a class="btn btn-purple btn-trans waves-effect w-md waves-info m-b-5" (click)="addMoreQualifications(addQualificationsForm); addQualificationsForm.reset();">
+                    <i class="ti-plus"></i>&nbsp;Add More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end row -->
+      </div> <!-- end card-box -->
+    </div><!-- end col -->
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" (click)="onSubmitQualifications(addQualificationsForm);">Submit</button>
+    <button type="button" (click)="closeModal()" class="btn btn-danger">Close</button>  
+  </div>
+</form>  
+
