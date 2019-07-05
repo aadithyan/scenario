@@ -23,20 +23,14 @@
       <div class="col-sm-8">
         <app-user-card></app-user-card>
         <!--/ meta -->
-        <form method="post" class="card-box">
-          <span class="input-icon icon-right">
-            <textarea rows="2" class="form-control" placeholder="Post a new message"></textarea>
-          </span>
-          <div class="p-t-10 pull-right">
-            <a class="btn btn-sm btn-primary waves-effect waves-light">Send</a>
-          </div>
-          <ul class="nav nav-pills profile-pills m-t-10">
-            <li><a href="#"><i class="fa fa-user"></i></a></li>
-            <li><a href="#"><i class="fa fa-location-arrow"></i></a></li>
-            <li><a href="#"><i class=" fa fa-camera"></i></a></li>
-            <li><a href="#"><i class="fa fa-smile-o"></i></a></li>
-          </ul>
-        </form>
+        <div class="row">
+          <div class="col-xl-6">
+            <app-qualifications></app-qualifications>
+          </div><!-- end col -->
+          <div class="col-xl-6">
+            <!-- <app-qualifications></app-qualifications> -->
+          </div><!-- end col -->          
+        </div>
         <div class="card-box">
           <div class="comment">
             <img src="assets/images/users/avatar-1.jpg" alt="" class="comment-avatar">

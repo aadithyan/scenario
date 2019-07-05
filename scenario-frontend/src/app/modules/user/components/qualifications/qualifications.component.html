@@ -1,0 +1,37 @@
+<div class="card-box">
+  <div class="dropdown pull-right">
+    <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+        <i class="mdi mdi-dots-vertical"></i>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right">
+      <!-- item-->
+      <a (click)="newQualificationsModel()" class="dropdown-item">Add Qualification</a>
+      <!-- item-->
+      <a href="javascript:void(0);" class="dropdown-item">Another action</a>
+      <!-- item-->
+      <a href="javascript:void(0);" class="dropdown-item">Something else</a>
+      <!-- item-->
+      <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
+    </div>
+  </div>
+  <h4 class="header-title m-t-0 m-b-30"><i class="mdi mdi-notification-clear-all m-r-5"></i> Qualifications</h4>
+  <div *ngIf="currentUser.data.qualifications.length > 0; else noQualifications;">
+    <ul class="list-group m-b-0 user-list">
+      <li class="list-group-item" *ngFor="let qualification of currentUser.data.qualifications">
+        <a href="#" class="user-list-item">
+          <div class="avatar"><i class="mdi mdi-spin mdi-vector-square text-success"></i></div>
+          <div class="user-desc">
+            <span class="name">{{ qualification.name }}</span>
+            <span class="desc">{{ qualification.specialization }},&nbsp;{{ qualification.institute }},&nbsp;{{ qualification.start_year }}&nbsp;-&nbsp;{{ qualification.end_year }}</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>  
+</div>
+<ng-template #noQualifications>
+  <div class="text-center">
+    <p>No Qualifications Added</p>
+    <a class="btn btn-primary" (click)="newQualificationsModel()">Add Qualifications</a>
+  </div>
+</ng-template>

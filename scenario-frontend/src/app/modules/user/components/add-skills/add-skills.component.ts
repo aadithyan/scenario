@@ -67,6 +67,8 @@ export class AddSkillsComponent implements OnInit {
       this.user_skill_modal.user_skill.push({ level_id: this.selectedLevel, 
                                       skill_id: this.selectedSkillOption, 
                                       years: this.years, months: this.months == null ? 0 : this.months }) 
+    } else {
+      this.responseService.show_messages("error", "Required Fields are empty");
     }
   }
 
@@ -74,6 +76,8 @@ export class AddSkillsComponent implements OnInit {
     if(addSkillsForm.valid){
       this.addMoreSkills(addSkillsForm);
       this.saveSkills();
+    } else {
+      this.responseService.show_messages("error", "Required Fields are empty");
     }
   }
 
