@@ -32,7 +32,8 @@
               "src/assets/css/menu.css",
               "src/assets/css/components.css",
               "src/assets/css/icons.css",
-              "node_modules/ngx-toastr/toastr.css"
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/@ng-select/ng-select/themes/default.theme.css"
             ],
             "scripts": ["node_modules/jquery/dist/jquery.min.js",
                         "src/assets/js/popper.min.js",

@@ -5,5 +5,8 @@ export const EndPoints = {
 export const UserActions = {
     registerUser: 'users',
     loginUser: 'users/login',
-    changePassword: 'users/change_password'
+    changePassword: 'users/change_password',
+    listLevels: 'levels',
+    listSkills: 'skills',
+    createUserSkills: 'users/user_skills'
 }

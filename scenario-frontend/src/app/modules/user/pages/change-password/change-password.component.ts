@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ChangePassword } from '../../../models/change_password.modal';
+import { ChangePassword } from '../../models/change_password.modal';
 import { ResponseService } from 'src/app/shared/services/response.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
@@ -14,7 +14,7 @@ import { SessionService } from 'src/app/shared/services/session.service';
 export class ChangePasswordComponent implements OnInit {
   change_modal_data: any = {};
   subscribe: any;
-  user: any;
+  currentUser: any;
   constructor(private passwordModal: ChangePassword,
               private responseService: ResponseService,
               private route: Router,
@@ -23,12 +23,12 @@ export class ChangePasswordComponent implements OnInit {
 
   ngOnInit() {
     this.change_modal_data = this.passwordModal.returnChangePassword();
-    this.user = this.sessionService.getCurrentSession();
+    this.currentUser = this.sessionService.getCurrentSession();
   }
 
   changePassword(changePasswordForm:NgForm){
     if(changePasswordForm.valid){
-      this.subscribe = this.userService.changePassword(this.change_modal_data, this.user.data.id).subscribe(data => {
+      this.subscribe = this.userService.changePassword(this.change_modal_data, this.currentUser.data.id).subscribe(data => {
         this.responseService.show_messages("success", "Successfully changed your password");
         this.route.navigate(['/dashboard'])
       });

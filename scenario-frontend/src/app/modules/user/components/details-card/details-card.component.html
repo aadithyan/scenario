@@ -1,0 +1,50 @@
+<div class="text-center card-box">
+  <div class="dropdown pull-right">
+    <a href="#" class="dropdown-toggle arrow-none card-drop" data-toggle="dropdown" aria-expanded="false">
+      <i class="mdi mdi-dots-vertical"></i>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right">
+    <!-- item-->
+    <a href="javascript:void(0);" class="dropdown-item">Action</a>
+    <!-- item-->
+    <a href="javascript:void(0);" class="dropdown-item">Another action</a>
+    <!-- item-->
+    <a href="javascript:void(0);" class="dropdown-item">Something else</a>
+    <!-- item-->
+    <a href="javascript:void(0);" class="dropdown-item">Separated link</a>
+  </div>
+  </div>
+  <div>
+    <img src="{{profile_image}}" class="rounded-circle thumb-xl img-thumbnail m-b-10" alt="profile-image">
+    <div class="text-left">
+      <address>
+          <strong>First Name</strong>
+          <p>{{ currentUser.data.first_name }}</p>
+      </address>
+      <address>
+        <strong>Middle Name</strong>
+        <p>{{ currentUser.data.middle_name }}</p>
+      </address>
+      <address>
+        <strong>Last Name</strong>
+        <p>{{ currentUser.data.last_name }}</p>
+      </address>
+      <address>
+        <strong>Email</strong>
+        <p>{{ currentUser.data.email }}</p>
+      </address>
+      <address *ngIf="currentUser.data.work_email">
+        <strong>Official Email</strong>
+        <p>{{ currentUser.data.work_email }}</p>
+      </address>
+      <address *ngIf="currentUser.data.address">
+        <strong>Address</strong>
+        <p>{{ currentUser.data.address }}, {{ currentUser.data.city }}, {{ currentUser.data.state }}, {{ currentUser.data.country }}</p>
+      </address>
+      <address *ngIf="currentUser.data.contact_no">
+        <strong>Contact No</strong>
+        <p>{{ currentUser.data.contact_no }}</p>
+      </address>  
+    </div>
+  </div>
+</div>

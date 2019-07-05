@@ -23,6 +23,8 @@ Rails.application.routes.draw do
         resources :skills do
           post :create, on: :collection
         end
+
+        resources :levels
       end
     end
   end
