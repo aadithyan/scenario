@@ -9,5 +9,6 @@ export const UserActions = {
     listLevels: 'levels',
     listSkills: 'skills',
     createUserSkills: 'users/user_skills',
-    createQualifications: 'users/user_qualifications'
+    createQualifications: 'users/user_qualifications',
+    createUserExperience: 'users/user_experiences'
 }
