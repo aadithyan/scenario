@@ -20,4 +20,9 @@ export class UserService {
     return this.httpService.post(url, data);
   }
 
+  public saveUserExperience(data, userId) {
+    const url = EndPoints.BASE_URL + UserActions.createUserExperience + '/?id=' + userId;
+    return this.httpService.post(url, data);
+  }
+
 }

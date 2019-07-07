@@ -6415,4 +6415,8 @@ File: Responsive
   color: #ff5b5b;
 }
 
+.list-group {
+  height: 270px !important;
+  overflow: scroll !important ;
+}
 /*# sourceMappingURL=style.css.map */

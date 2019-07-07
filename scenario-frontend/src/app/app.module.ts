@@ -34,7 +34,7 @@ import { UserCardComponent } from './modules/user/components/user-card/user-card
 import { SkillsCardComponent } from './modules/user/components/skills-card/skills-card.component';
 import { DetailsCardComponent } from './modules/user/components/details-card/details-card.component';
 import { AddSkillsComponent } from './modules/user/components/add-skills/add-skills.component';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { LevelService } from './shared/services/levels.service';
@@ -44,6 +44,9 @@ import { UserSkills } from './modules/user/models/user_skills.modal';
 import { QualificationsComponent } from './modules/user/components/qualifications/qualifications.component';
 import { AddQualificationsComponent } from './modules/user/components/add-qualifications/add-qualifications.component';
 import { UserQualifications } from './modules/user/models/user_qulifications.modal';
+import { ExperiencesComponent } from './modules/user/components/experiences/experiences.component';
+import { AddExperiencesComponent } from './modules/user/components/add-experiences/add-experiences.component';
+import { UserExperiences } from './modules/user/models/user_experiences.modal';
 
 @NgModule({
   declarations: [
@@ -67,7 +70,9 @@ import { UserQualifications } from './modules/user/models/user_qulifications.mod
     DetailsCardComponent,
     AddSkillsComponent,
     QualificationsComponent,
-    AddQualificationsComponent
+    AddQualificationsComponent,
+    ExperiencesComponent,
+    AddExperiencesComponent
   ],
   imports: [
     BrowserModule,
@@ -77,6 +82,7 @@ import { UserQualifications } from './modules/user/models/user_qulifications.mod
     FormsModule,
     NgbModule,
     NgSelectModule,
+    NgbDatepickerModule,
     TypeaheadModule.forRoot(),
     ToastrModule.forRoot({
       closeButton: false,
@@ -87,7 +93,9 @@ import { UserQualifications } from './modules/user/models/user_qulifications.mod
       newestOnTop: true
     })
   ],
-  entryComponents: [AddSkillsComponent, AddQualificationsComponent],
+  entryComponents: [AddSkillsComponent, 
+                    AddQualificationsComponent,
+                    AddExperiencesComponent],
   providers: [HttpService, 
               AuthenticationService,
               SessionService,
@@ -98,6 +106,7 @@ import { UserQualifications } from './modules/user/models/user_qulifications.mod
               ChangePassword,
               UserSkills,
               UserQualifications,
+              UserExperiences,
               UserService,
               LevelService,
               SkillService,

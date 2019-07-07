@@ -1,0 +1,86 @@
+<div class="custom-modal-title">
+  <h4 class="modal-title">Add Experience</h4>
+</div>
+<form class="form-horizontal" role="form" #addExperienceForm="ngForm">
+  <div class="row">
+    <div class="col-12">
+      <div class="card-box">
+        <h4 class="m-t-0 header-title">Add Your Experience</h4>
+        <p class="text-muted font-14">Add your professional experience here. Let people know about your expertise</p>
+        <div class="row">
+          <div class="col-12">
+            <div class="p-20">              
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label class="col-form-label">Company</label>
+                  <div class="input-group">
+                    <input type="text" required class="form-control" [(ngModel)]="company" name="company" id="inputEmail4" placeholder="">
+                    <div class="input-group-append">
+                      <span class="input-group-text text-danger">*</span>
+                    </div>                      
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4" class="col-form-label">Job Title</label>
+                  <div class="input-group">
+                    <input type="text" required class="form-control" [(ngModel)]="job_title" name="job_title" id="inputEmail4" placeholder="">
+                    <div class="input-group-append">
+                      <span class="input-group-text text-danger">*</span>
+                    </div>                      
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputEmail4" class="col-form-label">Start Date</label>
+                  <div class="input-group">
+                    <input type="text" required class="form-control" ngbDatepicker #startDate="ngbDatepicker" (click)="startDate.toggle()" [(ngModel)]="start_date" name="start_date" id="inputEmail4" placeholder="">
+                    <div class="input-group-append">
+                      <span class="input-group-text text-danger">*</span>
+                    </div>                      
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4" class="col-form-label">End Date</label>
+                  <div class="input-group">
+                    <input type="text" class="form-control" ngbDatepicker #endDate="ngbDatepicker" (click)="endDate.toggle()" [(ngModel)]="end_date" name="end_date" id="inputEmail4" placeholder="">
+                  </div>                    
+                </div>
+              </div>
+              <div class="form-row">                
+                <div class="form-group col-md-6">
+                  <div class="checkbox checkbox-primary">
+                      <input id="checkbox2" type="checkbox" [(ngModel)]="current" name="current">
+                      <label for="checkbox2"> Current Company </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <label for="inputPassword4" class="col-form-label">Website</label>
+                  <input type="text" class="form-control" name="website" [(ngModel)]="website" id="inputEmail4" placeholder="">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-6">
+                  <a class="btn btn-purple btn-trans waves-effect w-md waves-info m-b-5" (click)="addMoreExperiences(addExperienceForm); addExperienceForm.reset();">
+                    <i class="ti-plus"></i>&nbsp;Add More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end row -->
+      </div> <!-- end card-box -->
+    </div><!-- end col -->
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" (click)="onSubmitExperiences(addExperienceForm);">Submit</button>
+    <button type="button" (click)="closeModal()" class="btn btn-danger">Close</button>  
+  </div>
+</form>
