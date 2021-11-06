@@ -14,20 +14,26 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label class="col-form-label">Skill</label>
-                    <input [(ngModel)]="selectedSkillValue" name="s" autocomplete="off" required
-                      [typeahead]="skills"
-                      [isAnimated]="true"
-                      typeaheadOptionField="name"
-                      [typeaheadScrollable]="true"
-                      [typeaheadOptionsInScrollableView]="15"
-                      (typeaheadOnSelect)="onSelect($event)"
-                      class="form-control">
+                    <div class="input-group">
+                      <input [(ngModel)]="selectedSkillValue" name="s" autocomplete="off" required
+                        [typeahead]="skills"
+                        [isAnimated]="true"
+                        typeaheadOptionField="name"
+                        [typeaheadScrollable]="true"
+                        [typeaheadOptionsInScrollableView]="15"
+                        (typeaheadOnSelect)="onSelect($event)"
+                        class="form-control">
+                        <div class="input-group-append"><span class="input-group-text text-danger">*</span></div>
+                      </div>    
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                       <label for="inputEmail4" class="col-form-label">Years</label>
-                      <input type="number" required [(ngModel)]="years" class="form-control" name="years" id="inputEmail4" placeholder="0">
+                      <div class="input-group">
+                        <input type="number" required [(ngModel)]="years" class="form-control" name="years" id="inputEmail4" placeholder="0">
+                        <div class="input-group-append"><span class="input-group-text text-danger">*</span></div>
+                      </div>
                   </div>
                   <div class="form-group col-md-6">
                       <label for="inputPassword4" class="col-form-label">Months</label>
@@ -37,11 +43,14 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputPassword4" class="col-form-label">Expertise Level</label>
-                    <ng-select [items]="levels" name="level" required
-                    bindLabel="name"
-                    bindValue="id"
-                    [(ngModel)]="selectedLevel"
-                    placeholder="Select Expertise Level"></ng-select>
+                    <div class="input-group">
+                      <ng-select [items]="levels" name="level" required
+                      bindLabel="name"
+                      bindValue="id"
+                      [(ngModel)]="selectedLevel"
+                      placeholder="Select Expertise Level"></ng-select>
+                      <div class="input-group-append"><span class="input-group-text text-danger">*</span></div>
+                    </div>
                   </div>
                 </div>
                 <div class="form-row">
