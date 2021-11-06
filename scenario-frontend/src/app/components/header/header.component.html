@@ -12,11 +12,11 @@
           <li class="menu-item">
             <!-- Mobile menu toggle-->
             <a class="navbar-toggle nav-link">
-                <div class="lines">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+              <div class="lines">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </a>
             <!-- End mobile menu toggle-->
           </li>
@@ -33,8 +33,8 @@
                 <li>
                   <a class="right-bar-toggle"><i class="mdi mdi-bell-outline noti-icon"></i></a>
                   <div class="noti-dot">
-                      <span class="dot"></span>
-                      <span class="pulse"></span>
+                    <span class="dot"></span>
+                    <span class="pulse"></span>
                   </div>
                 </li>
               </ul>
@@ -42,15 +42,18 @@
             <!-- End Notification bar -->
           </li>
           <li class="dropdown notification-list">
-            <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
-                aria-haspopup="false" aria-expanded="false">
-                <img src="assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+            <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#"
+              role="button" aria-haspopup="false" aria-expanded="false">
+              <img src="assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+              <span class="pro-user-name ml-1">{{currentUser.data.user_name | titlecase}} <i class="mdi mdi-chevron-down"></i> </span>
             </a>
             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
               <!-- item-->
-              <a [routerLink]="[ '/profile']" class="dropdown-item notify-item"><i class="ti-user m-r-5"></i> Profile</a>
+              <a [routerLink]="[ '/profile']" class="dropdown-item notify-item"><i class="ti-user m-r-5"></i>
+                Profile</a>
               <!-- item-->
-              <a [routerLink]="[ '/change-password']" class="dropdown-item notify-item"><i class="ti-settings m-r-5"></i> Change Password</a>
+              <a [routerLink]="[ '/change-password']" class="dropdown-item notify-item"><i
+                  class="ti-settings m-r-5"></i> Change Password</a>
               <!-- item-->
               <a href="#" class="dropdown-item notify-item"><i class="ti-lock m-r-5"></i> Lock screen</a>
               <!-- item-->

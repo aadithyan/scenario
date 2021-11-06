@@ -10,7 +10,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #
 Api::V1::Level.find_or_create_by(name: 'Beginner', active: true)
-Api::V1::Level.find_or_create_by(name: 'Amatuer', active: true)
+Api::V1::Level.find_or_create_by(name: 'Amateur', active: true)
 Api::V1::Level.find_or_create_by(name: 'Intermediate', active: true)
 Api::V1::Level.find_or_create_by(name: 'Expert', active: true)
 
