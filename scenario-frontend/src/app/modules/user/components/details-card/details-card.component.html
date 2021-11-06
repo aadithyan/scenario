@@ -18,31 +18,31 @@
     <img src="{{profile_image}}" class="rounded-circle thumb-xl img-thumbnail m-b-10" alt="profile-image">
     <div class="text-left">
       <address>
-          <strong>First Name</strong>
+          <span class="text-muted m-b-20">First Name</span>
           <p>{{ currentUser.data.first_name }}</p>
       </address>
       <address>
-        <strong>Middle Name</strong>
+        <span class="text-muted m-b-20">Middle Name</span>
         <p>{{ currentUser.data.middle_name }}</p>
       </address>
       <address>
-        <strong>Last Name</strong>
+        <span class="text-muted m-b-20">Last Name</span>
         <p>{{ currentUser.data.last_name }}</p>
       </address>
       <address>
-        <strong>Email</strong>
+        <span class="text-muted m-b-20">Email</span>
         <p>{{ currentUser.data.email }}</p>
       </address>
       <address *ngIf="currentUser.data.work_email">
-        <strong>Official Email</strong>
+        <span class="text-muted m-b-20">Official Email</span>
         <p>{{ currentUser.data.work_email }}</p>
       </address>
       <address *ngIf="currentUser.data.address">
-        <strong>Address</strong>
+        <span class="text-muted m-b-20">Address</span>
         <p>{{ currentUser.data.address }}, {{ currentUser.data.city }}, {{ currentUser.data.state }}, {{ currentUser.data.country }}</p>
       </address>
       <address *ngIf="currentUser.data.contact_no">
-        <strong>Contact No</strong>
+        <span class="text-muted m-b-20">Contact No</span>
         <p>{{ currentUser.data.contact_no }}</p>
       </address>  
     </div>

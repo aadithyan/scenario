@@ -14,5 +14,6 @@ export class UserCardComponent implements OnInit {
   ngOnInit() {
     this.currentUser = this.sessionService.getCurrentSession();
     this.profile_image = "assets/images/users/" + this.currentUser.data.gender.toLowerCase() + "_profile.jpg"
+    console.log(this.currentUser)
   }
 }
