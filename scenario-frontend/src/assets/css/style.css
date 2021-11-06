@@ -6417,6 +6417,6 @@ File: Responsive
 
 .list-group {
   height: 270px !important;
-  overflow: scroll !important ;
+  overflow: auto !important ;
 }
 /*# sourceMappingURL=style.css.map */
